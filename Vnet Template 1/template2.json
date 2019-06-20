@@ -20,7 +20,7 @@
 			"location":"[parameters('location')]",
 			"properties":{
 					"addressSpace":{
-							"addressPrefixes": ["[parameters('location')]"]
+							"addressPrefixes": ["[parameters('addressPrefix')]"]
 							},
 					"subnets":[
 							{
