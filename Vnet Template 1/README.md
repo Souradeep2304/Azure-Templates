@@ -4,6 +4,6 @@
 </a>
 <a href="http://armviz.io/#/?load=https://github.com/Souradeep2304/Azure-Templates/blob/master/Vnet%20Template%201/template2.json" target="_blank">
     <img src="http://armviz.io/visualizebutton.png"/>
-</a>
+</a><br/>
 
-## This template creates a Vnet with a default subnet named subnet1.
+This template creates a Vnet with a default subnet named subnet1.
