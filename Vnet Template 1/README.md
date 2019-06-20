@@ -6,3 +6,4 @@
     <img src="http://armviz.io/visualizebutton.png"/>
 </a>
 
+## This template creates a Vnet with a default subnet named subnet1.

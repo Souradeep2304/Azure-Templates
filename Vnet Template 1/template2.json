@@ -7,7 +7,7 @@
 	"resourceGroup":{"type":"string"},
 	"location":{"type":"string"},
 	"addressPrefix":{"type":"string","defaultValue":"10.0.0.0/16"},
-	"subnetName":{"type":"string"},
+	
 	"subnetAdrressPrefix":{"type":"string"},
 	"enableDdosProtection":{"type":"bool"}
 	},
@@ -24,7 +24,7 @@
 							},
 					"subnets":[
 							{
-							   "name":"[parameters('subnetName')]",
+							   "name":"subnet1",
 							   "properties":{
 									  "addressPrefix":"[parameters('subnetAddressPrefix')]",
 									  "serviceEndpoints":[{"service":"Microsoft.Storage"}]
