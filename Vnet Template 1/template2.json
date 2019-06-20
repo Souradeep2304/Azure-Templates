@@ -15,11 +15,11 @@
 	[
 		{
 			"apiVersion": "2019-02-01",
-			"name"="[parameters('name')]",
+			"name":"[parameters('name')]",
 			"type":"Microsoft.Network/virtualNetworks",
 			"location":"[parameters('location')]",
 			"properties":"{
-					"adressSpace":{
+					"addressSpace":{
 							"addressPrefixes": ["[parameters('location')]"]
 							},
 					"subnets":[
