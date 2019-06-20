@@ -6,9 +6,9 @@
 	"name":{"type":"string"},
 	"resourceGroup":{"type":"string"},
 	"location":{"type":"string"},
-	"addressPrefix":{"type":"string","defaultValue":"10.0.0.0/16"},
+	"addressPrefix":{"type":"string"},
 	
-	"subnetAddressPrefix":{"type":"string","defaultValue":"10.0.0.0/24"},
+	"subnetAddressPrefix":{"type":"string"},
 	"enableDdosProtection":{"type":"bool"}
 	},
 	"resources":
