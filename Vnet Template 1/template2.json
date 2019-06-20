@@ -8,7 +8,7 @@
 	"location":{"type":"string"},
 	"addressPrefix":{"type":"string","defaultValue":"10.0.0.0/16"},
 	
-	"subnetAddressPrefix":{"type":"string"},
+	"subnetAddressPrefix":{"type":"string","defaultValue":"10.0.0.0/24"},
 	"enableDdosProtection":{"type":"bool"}
 	},
 	"resources":
