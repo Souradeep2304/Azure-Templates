@@ -16,7 +16,7 @@
         },
         "accessTier": {
             "type": "string"
-        }
+        },
  	"supportsHttpsTrafficOnly": {
             "type": "bool"
         },
