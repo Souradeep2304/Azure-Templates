@@ -26,7 +26,7 @@
 							{
 							   "name":"subnet1",
 							  
-							   "addressPrefix":"[parameters('subnetAddressPrefix')]"
+							   "properties":{"addressPrefix":"[parameters('subnetAddressPrefix')]"}
 									  
 									
 							}
