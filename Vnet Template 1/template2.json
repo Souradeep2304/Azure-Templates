@@ -27,7 +27,7 @@
 							   "name":"subnet1",
 							   "properties":{
 									  "addressPrefix":"[parameters('subnetAddressPrefix')]",
-									  "serviceEndpoints":[{"service":"Microsoft.Storage"}]
+									  
 									}
 							}
 						],
