@@ -14,4 +14,4 @@ Use the parameters.json file to create a V2 storage account with LRS in West US.
 2. You can use Azure CLI in order to deploy the storage account using the command "az group deployment create --resource-group MyAzureRsrcGroup --template-file template1.json". Before execuing the command you have to
 upload the template1.json file through the upload option given in the Azure CLI portal.<br/>
 3. You can use Azure PoweShell in order to deploy the storage account using the command "New-AzResourceGroupDeployment -ResourceGroupName MyAzureRsrcGrp -TemplateFile template1.json".
-
+ Before using the powershell command do remember to upload the file using the upload option and then change to home directory.
