@@ -25,10 +25,10 @@
 					"subnets":[
 							{
 							   "name":"subnet1",
-							   "properties":{
-									  "addressPrefix":"[parameters('subnetAddressPrefix')]"
+							  
+							   "addressPrefix":"[parameters('subnetAddressPrefix')]"
 									  
-									}
+									
 							}
 						],
 					"enableDdosProtection": "[parameters('enableDdosProtection')]"
