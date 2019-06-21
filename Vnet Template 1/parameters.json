@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "name": {
+      "value": "Vnet2"
+    },
+    "resourceGroup": {
+      "value": "MyAzurersrcGrp"
+    },
+    "location": {
+      "value": "West India"
+    },
+    "addressPrefix": {
+      "value": "10.0.0.0/16"
+    },
+    "subnetAddressPrefix": {
+      "value": "10.0.0.0/24"
+    },
+    "enableDdosProtection": {
+      "value": null
+    }
+  }
+}
