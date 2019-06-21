@@ -17,6 +17,18 @@
         "accessTier": {
             "type": "string"
         }
+ 	"supportsHttpsTrafficOnly": {
+            "type": "bool"
+        },
+        "networkAclsBypass": {
+            "type": "string"
+        },
+        "networkAclsDefaultAction": {
+            "type": "string"
+        },
+        "networkAclsVirtualNetworkRules": {
+            "type": "array"
+        }
        
     },
     "variables": {},
@@ -27,7 +39,14 @@
             "apiVersion": "2018-07-01",
             "location": "[parameters('location')]",
             "properties": {
-                "accessTier": "[parameters('accessTier')]"
+                "accessTier": "[parameters('accessTier')]",
+ 		"supportsHttpsTrafficOnly": "[parameters('supportsHttpsTrafficOnly')]",
+                "networkAcls": {
+                    "bypass": "[parameters('networkAclsBypass')]",
+                    "defaultAction": "[parameters('networkAclsDefaultAction')]",
+                    "ipRules": [],
+                    "virtualNetworkRules": "[parameters('networkAclsVirtualNetworkRules')]"
+                }
               
             },
             "dependsOn": [],
