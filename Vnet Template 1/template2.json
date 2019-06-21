@@ -6,7 +6,7 @@
 	"name":{"type":"string"},
 	"resourceGroup":{"type":"string"},
 	"location":{"type":"string"},
-	"addressPrefix":{"type":"string"},
+	"addressPrefix":{"type":"string","defaultValue":"10.0.0.0/16"},
 	
 	"subnetAddressPrefix":{"type":"string"},
 	"enableDdosProtection":{"type":"bool"}
