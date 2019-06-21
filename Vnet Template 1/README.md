@@ -14,7 +14,7 @@ This template creates a Vnet with a default subnet named subnet1. You can use th
 You can press on the deploy button above inorder to directly deploy this ARM template on Azure portal.<br/>
 
 ### 2. Azure CLI:
-You can use Azure CLI in order to deploy the storage account using the command 
+You can use Azure CLI in order to deploy the storage account using the command:
 #### "az group deployment create --resource-group MyAzureRsrcGroup --template-file template2.json". 
 Before execuing the command you have to upload the template1.json file through the upload option given in the Azure CLI portal.<br/>
 ### 3. Azure PowerShell:
