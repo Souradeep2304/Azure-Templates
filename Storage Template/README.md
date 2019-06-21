@@ -16,7 +16,7 @@ You can press on the deploy button above inorder to directly deploy this ARM tem
 
 ### 2. Azure CLI:
 You can use Azure CLI in order to deploy the storage account using the command:
-#### "az group deployment create --resource-group <resource-group-name> --template-file template1.json". 
+#### "az group deployment create --resource-group "<resource-group-name>" --template-file template1.json". 
 Before execuing the command you have to upload the template1.json file through the upload option given in the Azure CLI portal.<br/>
 ### 3. Azure PowerShell:
  You can use Azure PoweShell in order to deploy the storage account using the command:
