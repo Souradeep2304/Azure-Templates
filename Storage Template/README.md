@@ -6,4 +6,5 @@
     <img src="http://armviz.io/visualizebutton.png"/>
 </a><br/>
 
-This template creates a Storage Account
+This template creates a Storage Account<br/>
+Use the parameters.json file to create a V2 storage account with LRS in West US. Input the name of the account in the parmaeters file.
