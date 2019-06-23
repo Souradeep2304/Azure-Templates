@@ -3,7 +3,7 @@
 
 This template creates a Vnet with a default subnet named subnet1. You can use the parameter.json file in order to use the default values for the template deployment.
 
-## Three modes of Execution:<br/>
+## Three Modes of Execution:<br/>
 ### 1. Using Deploy Button:
  <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSouradeep2304%2FAzure-Templates%2Fmaster%2FVnet%20Template%201%2Ftemplate2.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
