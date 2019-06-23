@@ -21,4 +21,4 @@ Before execuing the command you have to upload the template1.json file through t
 ### 3. Azure PowerShell:
  You can use Azure PoweShell in order to deploy the storage account using the command:
 #### "New-AzResourceGroupDeployment -ResourceGroupName resource-group-name -TemplateFile template1.json".
- Before using the powershell command do remember to upload the file using the upload option and then change to home directory.Also replace the resource-group-name with your resource group.
+ Before using the powershell command do remember to upload the file using the upload option and then change to home directory. Also replace the resource-group-name with your resource group.
