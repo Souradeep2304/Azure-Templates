@@ -2,6 +2,9 @@
      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
      "contentVersion": "1.0.0.0",
      "parameters": {
+        "vNet1Name":{"type":"string"},
+        "vNet2Name":{"type":"string"}
+
      },
      "variables": {
      },
@@ -9,7 +12,7 @@
          {
          "apiVersion": "2016-06-01",
          "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
-         "name": "MyVnet1/Assignmnet",
+         "name": "[concat(parameters('vNet1Name'),'/Assignmnet')]",
          "location": "[resourceGroup().location]",
          "properties": {
          "allowVirtualNetworkAccess": true,
@@ -17,9 +20,25 @@
          "allowGatewayTransit": false,
          "useRemoteGateways": false,
              "remoteVirtualNetwork": {
-             "id": "/subscriptions/5a4e2629-2885-4a52-b513-ecbe4a3c035f/resourceGroups/MyAzureRsrcGrp/providers/Microsoft.Network/virtualNetworks/MyVnet2"
+             "id": "[concat('/subscriptions/5a4e2629-2885-4a52-b513-ecbe4a3c035f/resourceGroups/MyAzureRsrcGrp/providers/Microsoft.Network/virtualNetworks/',parameters('vNet2Name'))]"
+             }
+         }
+         },
+             {
+         "apiVersion": "2016-06-01",
+         "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+         "name": "[concat(parameters('vNet2Name'),'/Assignmnet')]",
+         "location": "[resourceGroup().location]",
+         "properties": {
+         "allowVirtualNetworkAccess": true,
+         "allowForwardedTraffic": false,
+         "allowGatewayTransit": false,
+         "useRemoteGateways": false,
+             "remoteVirtualNetwork": {
+              "id": "[concat('/subscriptions/5a4e2629-2885-4a52-b513-ecbe4a3c035f/resourceGroups/MyAzureRsrcGrp/providers/Microsoft.Network/virtualNetworks/',parameters('vNet1Name'))]"
              }
          }
          }
+
      ]
 }
