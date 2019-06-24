@@ -20,7 +20,7 @@
          "allowGatewayTransit": false,
          "useRemoteGateways": false,
              "remoteVirtualNetwork": {
-             "id": "[resourceId('Microsoft.Network/virtualNetworks',parameters('vNet1Name'))]"
+             "id": "[resourceId('Microsoft.Network/virtualNetworks',parameters('vNet2Name'))]"
              }
          }
          },
