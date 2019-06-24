@@ -20,7 +20,7 @@
          "allowGatewayTransit": false,
          "useRemoteGateways": false,
              "remoteVirtualNetwork": {
-             "id": "[concat('/subscriptions/5a4e2629-2885-4a52-b513-ecbe4a3c035f/resourceGroups/MyAzureRsrcGrp/providers/Microsoft.Network/virtualNetworks/',parameters('vNet2Name'))]"
+             "id": "[resourceId('Microsoft.Network/virtualNetworks',parameters('vNet1Name'))]"
              }
          }
          },
@@ -35,7 +35,7 @@
          "allowGatewayTransit": false,
          "useRemoteGateways": false,
              "remoteVirtualNetwork": {
-              "id": "[concat('/subscriptions/5a4e2629-2885-4a52-b513-ecbe4a3c035f/resourceGroups/MyAzureRsrcGrp/providers/Microsoft.Network/virtualNetworks/',parameters('vNet1Name'))]"
+              "id": "[resourceId('Microsoft.Network/virtualNetworks',parameters('vNet1Name'))]"
              }
          }
          }
