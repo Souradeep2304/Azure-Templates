@@ -1,4 +1,4 @@
-# Creating peering between 2 Virtual Networks
+# Creating Peering Between 2 Existing Virtual Networks
 
 This template can be used inorder to deploy Vnet peering between two existing vnets named MyVnet1 and MyVnet2. Inorder to change the names of the vnets, change the same in the template3.json file.
 
