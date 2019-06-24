@@ -19,7 +19,7 @@ You can use Azure CLI in order to deploy the storage account using the command:
 ```bash
 az group deployment create --resource-group <resource-group-name> --template-file template3.json 
 ```
-Before execuing the command you have to upload the template1.json file through the upload option given in the Azure CLI portal. Also replace the resource-group-name with your resource group.<br/>
+Before execuing the command you have to upload the template3.json file through the upload option given in the Azure CLI portal. Also replace the resource-group-name with your resource group.<br/>
 ### 3. Azure PowerShell:
  You can use Azure PoweShell in order to deploy the storage account using the command:
 ```bash
