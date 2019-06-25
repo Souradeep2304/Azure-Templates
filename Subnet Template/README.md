@@ -2,7 +2,7 @@
 
 
 This template creates a subnet within a pre-existing Vnet. You can use the parameter.json file in order to use the default values for the template deployment.</br>
-You can use [`Vnet Template 1`](https://github.com/Souradeep2304/Azure-Templates/tree/master/Vnet%20Template%201) repository in-order to create the Vnets.
+You can use [`Vnet Template 1`](https://github.com/Souradeep2304/Azure-Templates/tree/master/Vnet%20Template%201) repository in-order to create the Vnet.
 
 ## Three Modes of Execution:<br/>
 ### 1. Using Deploy Button:
