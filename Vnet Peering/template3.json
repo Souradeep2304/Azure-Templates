@@ -3,7 +3,12 @@
      "contentVersion": "1.0.0.0",
      "parameters": {
         "vNet1Name":{"type":"string"},
-        "vNet2Name":{"type":"string"}
+        "vNet2Name":{"type":"string"},
+        "virtualNetworkAccess":{"type":"bool"},
+        "forwardedTraffic":{"type":"bool"},
+        "gatewayTransit":{"type":"bool"},
+        "remoteGateways":{"type":"bool"}
+
 
      },
      "variables": {
@@ -15,10 +20,10 @@
          "name": "[concat(parameters('vNet1Name'),'/Assignmnet')]",
          "location": "[resourceGroup().location]",
          "properties": {
-         "allowVirtualNetworkAccess": true,
-         "allowForwardedTraffic": false,
-         "allowGatewayTransit": false,
-         "useRemoteGateways": false,
+         "allowVirtualNetworkAccess":"[parameters('virtualNetworkAccess')]",
+         "allowForwardedTraffic": "[parameters('forwardedTraffic')]",
+         "allowGatewayTransit": "[parameters('gatewayTransit')]",
+         "useRemoteGateways": "[parameters('remoteGateways')]",
              "remoteVirtualNetwork": {
              "id": "[resourceId('Microsoft.Network/virtualNetworks',parameters('vNet2Name'))]"
              }
@@ -30,10 +35,10 @@
          "name": "[concat(parameters('vNet2Name'),'/Assignmnet')]",
          "location": "[resourceGroup().location]",
          "properties": {
-         "allowVirtualNetworkAccess": true,
-         "allowForwardedTraffic": false,
-         "allowGatewayTransit": false,
-         "useRemoteGateways": false,
+         "allowVirtualNetworkAccess":"[parameters('virtualNetworkAccess')]",
+         "allowForwardedTraffic": "[parameters('forwardedTraffic')]",
+         "allowGatewayTransit": "[parameters('gatewayTransit')]",
+         "useRemoteGateways": "[parameters('remoteGateways')]",
              "remoteVirtualNetwork": {
               "id": "[resourceId('Microsoft.Network/virtualNetworks',parameters('vNet1Name'))]"
              }
