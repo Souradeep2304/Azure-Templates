@@ -2,12 +2,37 @@
      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
      "contentVersion": "1.0.0.0",
      "parameters": {
-        "vNet1Name":{"type":"string"},
-        "vNet2Name":{"type":"string"},
-        "virtualNetworkAccess":{"type":"bool"},
-        "forwardedTraffic":{"type":"bool"},
-        "gatewayTransit":{"type":"bool"},
-        "remoteGateways":{"type":"bool"}
+        "vNet1Name":{"type":"string",
+            "metadata":{
+                "description":"Name of the first Vnet"
+            }
+
+        },
+        "vNet2Name":{"type":"string",
+            "metadata":{
+                "description":"Name of the second Vnet."
+            }
+        },
+        "virtualNetworkAccess":{"type":"bool",
+            "metadata":{
+                "description":"Allow access to the virtual networks."
+            }
+        },
+        "forwardedTraffic":{"type":"bool",
+            "metadata":{
+                "description":"allow traffic forwarded by a network virtual appliance in a virtual network"
+            }
+        },
+        "gatewayTransit":{"type":"bool",
+            "metadata":{
+                "description":"If there is a virtual network gateway assosciated with the vnet."
+            }
+        },
+        "remoteGateways":{"type":"bool",
+            "metadata":{
+                "description":"To allow traffic from Vnet1 to Vnet2 through the gateway of Vnet2"
+            }
+        }
 
 
      },

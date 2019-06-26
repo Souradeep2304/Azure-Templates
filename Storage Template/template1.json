@@ -9,13 +9,22 @@
             "type": "string"
         },
         "accountType": {
-            "type": "string"
+            "type": "string",
+            "metadata":{
+            "description":"Kind of replication used for the storage account."
+        }
         },
         "kind": {
-            "type": "string"
+            "type": "string",
+            "metadata":{
+                "description":"Type of storage account to be made."
+            }
         },
         "accessTier": {
-            "type": "string"
+            "type": "string",
+            "metadata":{
+            "description":"Kind of access required: Hot or Cool"
+        }
         }
        
     },

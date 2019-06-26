@@ -6,13 +6,34 @@
 	"vNetName":{"type":"string"},
 	
 	"location":{"type":"string"},
-	"addressPrefix":{"type":"string","defaultValue":"10.0.0.0/16"},
+	"addressPrefix":{
+		"type":"string",
+		"defaultValue":"10.0.0.0/16",
+		"metadata":{
+		"description":"Adress range for the Vnet."
+	}
+	},
 	"subnetName1":{"type":"string"},
 	"subnetName2":{"type":"string"},
 	"subnetName3":{"type":"string"},
-	"subnetAddressPrefix1":{"type":"string"},
-	"subnetAddressPrefix2":{"type":"string"},
-	"subnetAddressPrefix3":{"type":"string"},
+	"subnetAddressPrefix1":{
+		"type":"string",
+		"metadata":{
+		"description":"Address range for first subnet."
+	}
+	},
+	"subnetAddressPrefix2":{
+		"type":"string",
+		"metadata":{
+		"description":"Address range for second subnet"
+	}
+	},
+	"subnetAddressPrefix3":{
+		"type":"string",
+		"metadata":{
+		"description":"Address range for third subnet"
+	}
+	},
 	"enableDdosProtection":{"type":"bool"}
 	},
 	"resources":
