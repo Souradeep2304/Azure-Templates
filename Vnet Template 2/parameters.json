@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "vNetName": {
-      "value": "Master"
+      "value": "MyVnet123"
     },
     "location": {
       "value": "West US"
@@ -12,21 +12,33 @@
       "value": "10.0.0.0/16"
     },
     "subnetName1": {
-      "value": "sub1"
+      "value": "web"
     },
     "subnetName2": {
-      "value": "sub2"
+      "value": "api"
     },
     "subnetName3": {
-      "value": "sub3"
+      "value": "database"
+    },
+    "networkSecurityGroupName1": {
+      "value": "webNSG"
+    },
+    "networkSecurityGroupName2": {
+      "value": "apiNSG"
+    },
+    "networkSecurityGroupName3": {
+      "value": "databaseNSG"
     },
     "subnetAddressPrefix1": {
-      "value": "10.0.1.0/24"
+      "value": "10.0.0.0/24"
     },
     "subnetAddressPrefix2": {
-      "value": "10.0.2.0/24"
+      "value": "10.0.1.0/24"
     },
     "subnetAddressPrefix3": {
+      "value": "10.0.2.0/24"
+    },
+    "firewallSubnet": {
       "value": "10.0.3.0/24"
     },
     "enableDdosProtection": {
