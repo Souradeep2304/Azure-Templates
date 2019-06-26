@@ -34,15 +34,281 @@
 		"description":"Address range for third subnet"
 	}
 	},
+	"firewallSubnet":{
+		"type":"string",
+		"metadata":{
+		"description":"Address range for firewall subnet"
+	}
+	},
 	"enableDdosProtection":{"type":"bool"}
 	},
+	"variables": {
+    "networkSecurityGroupName1": "webNSG",
+    "networkSecurityGroupName1": "apiNSG",
+    "networkSecurityGroupName1": "databaseNSG",
+   
+    "apiVersion": "2015-06-15"
+},
 	"resources":
 	[
+		{
+      "apiVersion": "2015-06-15",
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "name": "[variables('networkSecurityGroupName1')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "securityRules": [
+          {
+            "name": "HTTP/S",
+            "properties": {
+              "description": "HTTP/S rule",
+              "protocol": "Any",
+              "sourcePortRange": "*",
+              "destinationPortRange": "80,443",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "191.1.0.0/24",
+              "access": "Allow",
+              "priority": 100,
+              "direction": "Inbound"
+            },
+          },
+            {
+            "name": "DenyCommToDatabase",
+            "properties": {
+              "description": "To Deny Communication to Database Subnet",
+              "protocol": "Any",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "191.1.2.0/24",
+              "access": "Deny",
+              "priority": 100,
+              "direction": "Outbound"
+            }
+          },
+          {
+            "name": "WEBtoAPI",
+            "properties": {
+              "description": "Communication between WEB and API subnet",
+              "protocol": "Any",
+              "sourcePortRange": "*",
+              "destinationPortRange": "80,443",
+              "sourceAddressPrefix": "191.1.0.0/24",
+              "destinationAddressPrefix": "191.1.1.0/24",
+              "access": "Allow",
+              "priority": 110,
+              "direction": "Outbound"
+            }
+          }
+
+        ]
+      }
+},
+
+{
+      "apiVersion": "2015-06-15",
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "name": "[variables('networkSecurityGroupName2')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "securityRules": [
+          {
+            "name": "HTTP from WEB",
+            "properties": {
+              "description": "To accept HTTP connection from WEB subnet",
+              "protocol": "Any",
+              "sourcePortRange": "*",
+              "destinationPortRange": "80,443",
+              "sourceAddressPrefix": "191.1.0.0/24",
+              "destinationAddressPrefix": "191.1.1.0/24",
+              "access": "Allow",
+              "priority": 100,
+              "direction": "Inbound"
+            },
+          },
+            {
+            "name": "DATABASEtoAPI",
+            "properties": {
+              "description": "Inbound connnection from DATABASE subnet to API subnet.",
+              "protocol": "Any",
+              "sourcePortRange": "*",
+              "destinationPortRange": "80,443",
+              "sourceAddressPrefix": "191.1.2.0/24",
+              "destinationAddressPrefix": "191.1.1.0/24",
+              "access": "Allow",
+              "priority": 110,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "FTPin",
+            "properties": {
+              "description": "FTP connection from DATABASE subnet.",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "21",
+              "sourceAddressPrefix": "191.1.2.0/24",
+              "destinationAddressPrefix": "191.1.1.0/24",
+              "access": "Allow",
+              "priority": 120,
+              "direction": "Inbound"
+            }
+          },
+              {
+            "name": "APItoDATABASE",
+            "properties": {
+              "description": "MySQL connection to DATABASE subnet from API subnet",
+              "protocol": "Any",
+              "sourcePortRange": "*",
+              "destinationPortRange": "3306",
+              "sourceAddressPrefix": "191.1.1.0/24",
+              "destinationAddressPrefix": "191.1.2.0/24",
+              "access": "Allow",
+              "priority": 100,
+              "direction": "Outbound"
+            }
+          },
+          {
+            "name": "APItoWEB",
+            "properties": {
+              "description": "HTTP/S connection from API to WEB subnet.",
+              "protocol": "Any",
+              "sourcePortRange": "*",
+              "destinationPortRange": "80,443",
+              "sourceAddressPrefix": "191.1.1.0/24",
+              "destinationAddressPrefix": "191.1.0.0/24",
+              "access": "Allow",
+              "priority": 110,
+              "direction": "Outbound"
+            }
+          },
+           {
+            "name": "FTP",
+            "properties": {
+              "description": "FTP connection from API subnet to DATABASE subnet.",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "80,443",
+              "sourceAddressPrefix": "191.1.1.0/24",
+              "destinationAddressPrefix": "191.1.2.0/24",
+              "access": "Allow",
+              "priority": 120,
+              "direction": "Outbound"
+            }
+          }
+
+
+        ]
+      }
+},
+
+
+{
+      "apiVersion": "2015-06-15",
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "name": "[variables('networkSecurityGroupName3')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "securityRules": [
+          {
+            "name": "InboundFromAPI",
+            "properties": {
+              "description": "To accept connection from API subnet",
+              "protocol": "Any",
+              "sourcePortRange": "*",
+              "destinationPortRange": "3306",
+              "sourceAddressPrefix": "191.1.1.0/24",
+              "destinationAddressPrefix": "191.1.2.0/24",
+              "access": "Allow",
+              "priority": 100,
+              "direction": "Inbound"
+            },
+          },
+            {
+            "name": "InboundFromWEB",
+            "properties": {
+              "description": "Deny direct Communication between DATABASE and WEB subnets.",
+              "protocol": "Any",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "191.1.0.0/24",
+              "destinationAddressPrefix": "191.1.2.0/24",
+              "access": "Deny",
+              "priority": 110,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "SSH",
+            "properties": {
+              "description": "SSH connection from DATABASE subnet IPs.",
+              "protocol": "Any",
+              "sourcePortRange": "*",
+              "destinationPortRange": "22",
+              "sourceAddressPrefix": "191.1.2.0/24",
+              "destinationAddressPrefix": "191.1.2.0/24",
+              "access": "Allow",
+              "priority": 120,
+              "direction": "Inbound"
+            }
+          },
+              {
+            "name": "FTP",
+            "properties": {
+              "description": "FTP connection to DATABASE subnet from API subnet",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "21",
+              "sourceAddressPrefix": "191.1.1.0/24",
+              "destinationAddressPrefix": "191.1.2.0/24",
+              "access": "Allow",
+              "priority": 130,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "DATABASEToAPI",
+            "properties": {
+              "description": " Connection from DATABASE to API subnet.",
+              "protocol": "Any",
+              "sourcePortRange": "*",
+              "destinationPortRange": "80,443",
+              "sourceAddressPrefix": "191.1.2.0/24",
+              "destinationAddressPrefix": "191.1.1.0/24",
+              "access": "Allow",
+              "priority": 100,
+              "direction": "Outbound"
+            }
+          },
+           {
+            "name": "FTPout",
+            "properties": {
+              "description": "FTP connection from DATABASE to API subnet.",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "21",
+              "sourceAddressPrefix": "191.1.2.0/24",
+              "destinationAddressPrefix": "191.1.1.0/24",
+              "access": "Allow",
+              "priority": 110,
+              "direction": "Outbound"
+            }
+          }
+
+
+        ]
+      }
+},
 		{
 			"apiVersion": "2019-02-01",
 			"name":"[parameters('vNetName')]",
 			"type":"Microsoft.Network/virtualNetworks",
 			"location":"[parameters('location')]",
+			"dependsOn": [
+      		"[concat('Microsoft.Network/networkSecurityGroups/', variables('networkSecurityGroupName1'))]",
+      		"[concat('Microsoft.Network/networkSecurityGroups/', variables('networkSecurityGroupName2'))]",
+      		"[concat('Microsoft.Network/networkSecurityGroups/', variables('networkSecurityGroupName3'))]"
+],
 			"properties":{
 					"addressSpace":{
 							"addressPrefixes": ["[parameters('addressPrefix')]"]
@@ -53,21 +319,46 @@
 							{
 							   "name":"[parameters('subnetName1')]",
 							  
-							   "properties":{"addressPrefix":"[parameters('subnetAddressPrefix1')]"}
+							   "properties":{
+							   	"addressPrefix":"[parameters('subnetAddressPrefix1')]",
+							   	"networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName1'))]"
+}
+							   }
 									  
 									
 							},
 							{
 							   "name":"[parameters('subnetName2')]",
 							  
-							   "properties":{"addressPrefix":"[parameters('subnetAddressPrefix2')]"}
+							   "properties":{
+							   	"addressPrefix":"[parameters('subnetAddressPrefix2')]",
+							   	"networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName2'))]"
+}
+
+							   }
 									  
 									
 							},
 							{
 							   "name":"[parameters('subnetName3')]",
 							  
-							   "properties":{"addressPrefix":"[parameters('subnetAddressPrefix3')]"}
+							   "properties":{
+							   "addressPrefix":"[parameters('subnetAddressPrefix3')]",
+							   "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName3'))]"
+			}
+							}
+									  
+									
+							},
+							{
+							   "name":"AzureFirewallSubnet",
+							  
+							   "properties":{
+							   "addressPrefix":"[parameters('firewallSubnet')]",
+							   							}
 									  
 									
 							}
