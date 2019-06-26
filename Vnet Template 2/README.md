@@ -1,7 +1,7 @@
-# Make a Vnet with 3 Subnets
+# Make a Vnet with 3 Subnets and 3 NSGs
 
 
-This template creates a Vnet with 3 subnets. You can use the parameter.json file in order to use the default values for the template deployment.
+This template creates a Vnet with 3 subnets. Along with the subnets there will be 3 network security groups created with the rules predefined in the template file for WEB-API-DATBASE architecture. These 3 security groups will be assosciated with each of the subnets respectively. You can use the parameter.json file in order to use the default values for the template deployment.
 
 ## Three Modes of Execution:<br/>
 ### 1. Using Deploy Button:
