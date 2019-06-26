@@ -68,16 +68,16 @@
 		{
 			"apiVersion": "2015-06-15",
 			"type": "Microsoft.Network/networkSecurityGroups",
-			"name": "[variables('networkSecurityGroupName1')]",
+			"name": "[parameters('networkSecurityGroupName1')]",
 			"location": "[parameters('location')]",
 			"properties": {
 				"securityRules": [{
-						"name": "HTTP/S",
+						"name": "HTTPorHTTPS",
 						"properties": {
 							"description": "HTTP/S rule",
-							"protocol": "Any",
+							"protocol": "Tcp",
 							"sourcePortRange": "*",
-							"destinationPortRange": "80,443",
+							"destinationPortRange": ["80","443"],
 							"sourceAddressPrefix": "*",
 							"destinationAddressPrefix": "191.1.0.0/24",
 							"access": "Allow",
@@ -90,7 +90,7 @@
 						"name": "DenyCommToDatabase",
 						"properties": {
 							"description": "To Deny Communication to Database Subnet",
-							"protocol": "Any",
+							"protocol": "Tcp",
 							"sourcePortRange": "*",
 							"destinationPortRange": "*",
 							"sourceAddressPrefix": "*",
@@ -104,9 +104,9 @@
 						"name": "WEBtoAPI",
 						"properties": {
 							"description": "Communication between WEB and API subnet",
-							"protocol": "Any",
+							"protocol": "Tcp",
 							"sourcePortRange": "*",
-							"destinationPortRange": "80,443",
+							"destinationPortRange": ["80","443"],
 							"sourceAddressPrefix": "191.1.0.0/24",
 							"destinationAddressPrefix": "191.1.1.0/24",
 							"access": "Allow",
@@ -122,16 +122,16 @@
 		{
 			"apiVersion": "2015-06-15",
 			"type": "Microsoft.Network/networkSecurityGroups",
-			"name": "[variables('networkSecurityGroupName2')]",
+			"name": "[parameters('networkSecurityGroupName2')]",
 			"location": "[parameters('location')]",
 			"properties": {
 				"securityRules": [{
-						"name": "HTTP from WEB",
+						"name": "HTTPfromWEB",
 						"properties": {
 							"description": "To accept HTTP connection from WEB subnet",
-							"protocol": "Any",
+							"protocol": "Tcp",
 							"sourcePortRange": "*",
-							"destinationPortRange": "80,443",
+							"destinationPortRange":[ "80","443"],
 							"sourceAddressPrefix": "191.1.0.0/24",
 							"destinationAddressPrefix": "191.1.1.0/24",
 							"access": "Allow",
@@ -143,9 +143,9 @@
 						"name": "DATABASEtoAPI",
 						"properties": {
 							"description": "Inbound connnection from DATABASE subnet to API subnet.",
-							"protocol": "Any",
+							"protocol": "Tcp",
 							"sourcePortRange": "*",
-							"destinationPortRange": "80,443",
+							"destinationPortRange": ["80","443"],
 							"sourceAddressPrefix": "191.1.2.0/24",
 							"destinationAddressPrefix": "191.1.1.0/24",
 							"access": "Allow",
@@ -171,7 +171,7 @@
 						"name": "APItoDATABASE",
 						"properties": {
 							"description": "MySQL connection to DATABASE subnet from API subnet",
-							"protocol": "Any",
+							"protocol": "Tcp",
 							"sourcePortRange": "*",
 							"destinationPortRange": "3306",
 							"sourceAddressPrefix": "191.1.1.0/24",
@@ -185,9 +185,9 @@
 						"name": "APItoWEB",
 						"properties": {
 							"description": "HTTP/S connection from API to WEB subnet.",
-							"protocol": "Any",
+							"protocol": "Tcp",
 							"sourcePortRange": "*",
-							"destinationPortRange": "80,443",
+							"destinationPortRange": ["80","443"],
 							"sourceAddressPrefix": "191.1.1.0/24",
 							"destinationAddressPrefix": "191.1.0.0/24",
 							"access": "Allow",
@@ -201,7 +201,7 @@
 							"description": "FTP connection from API subnet to DATABASE subnet.",
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
-							"destinationPortRange": "80,443",
+							"destinationPortRange": ["80","443"],
 							"sourceAddressPrefix": "191.1.1.0/24",
 							"destinationAddressPrefix": "191.1.2.0/24",
 							"access": "Allow",
@@ -219,14 +219,14 @@
 		{
 			"apiVersion": "2015-06-15",
 			"type": "Microsoft.Network/networkSecurityGroups",
-			"name": "[variables('networkSecurityGroupName3')]",
+			"name": "[parameters('networkSecurityGroupName3')]",
 			"location": "[parameters('location')]",
 			"properties": {
 				"securityRules": [{
 						"name": "InboundFromAPI",
 						"properties": {
 							"description": "To accept connection from API subnet",
-							"protocol": "Any",
+							"protocol": "Tcp",
 							"sourcePortRange": "*",
 							"destinationPortRange": "3306",
 							"sourceAddressPrefix": "191.1.1.0/24",
@@ -240,7 +240,7 @@
 						"name": "InboundFromWEB",
 						"properties": {
 							"description": "Deny direct Communication between DATABASE and WEB subnets.",
-							"protocol": "Any",
+							"protocol": "Tcp",
 							"sourcePortRange": "*",
 							"destinationPortRange": "*",
 							"sourceAddressPrefix": "191.1.0.0/24",
@@ -254,7 +254,7 @@
 						"name": "SSH",
 						"properties": {
 							"description": "SSH connection from DATABASE subnet IPs.",
-							"protocol": "Any",
+							"protocol": "Tcp",
 							"sourcePortRange": "*",
 							"destinationPortRange": "22",
 							"sourceAddressPrefix": "191.1.2.0/24",
@@ -282,9 +282,9 @@
 						"name": "DATABASEToAPI",
 						"properties": {
 							"description": " Connection from DATABASE to API subnet.",
-							"protocol": "Any",
+							"protocol": "Tcp",
 							"sourcePortRange": "*",
-							"destinationPortRange": "80,443",
+							"destinationPortRange": ["80","443"],
 							"sourceAddressPrefix": "191.1.2.0/24",
 							"destinationAddressPrefix": "191.1.1.0/24",
 							"access": "Allow",
