@@ -181,7 +181,7 @@
 		"subnetAddressPrefix1":{"value":"[parameters('subnetAddressPrefix1')]"},
 		"subnetAddressPrefix2":{"value":"[parameters('subnetAddressPrefix2')]"},
 		"subnetAddressPrefix3":{"value":"[parameters('subnetAddressPrefix3')]"},
-		"addressPrefix1":{"value":"[parameters('addressPrefix1')]"},
+		"addressPrefixes":{"value":"[parameters('addressPrefix1')]"},
 		
 		"firewallSubnet":{"value":"[parameters('firewallSubnetOfVnet1')]"},
 		"enableDdosProtection":{"value":"[parameters('enableDdosProtection')]"}
@@ -203,6 +203,7 @@
      },
      "parameters": {
 		"vnet":{"value":"[parameters('vNet2')]"},
+		"addressPrefixes":{"value":"[parameters('addressPrefixOfSecondVnet')]"},
 		"location":{"value": "[parameters('location')]"},
 		"subnetName1":{"value":"[parameters('subnet1NameOfSecondVnet')]"},
 		"subnetName2":{"value":"[parameters('subnet2NameOfSecondVnet')]"},
