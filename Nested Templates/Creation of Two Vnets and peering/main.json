@@ -74,7 +74,17 @@
         "metadata": {
             "description": "Address range for firewall subnet"
         }
-    }},
+	},
+	"networkSecurityGroup1": {
+		"type": "string"
+	},
+	"networkSecurityGroup2": {
+		"type": "string"
+	},
+	"networkSecurityGroup3": {
+		"type": "string"
+	}
+},
     "resources": [
   {
      "type": "Microsoft.Resources/deployments",
@@ -193,13 +203,25 @@
      "properties": {
        "mode": "Incremental",
        "templateLink": {
-          "uri":"https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Vnet%20Template%202/template.json",
+          "uri":"https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Nested%20Templates/Creation%20of%20Two%20Vnets%20and%20peering/NSGcreation.json",
           "contentVersion":"1.0.0.0"
        },
-       "parametersLink": {
+       "parameters": {
+		   "networkSecurityGroup1":{"value":"[parameters('networkSecurityGroup1')]"},
+		   "networkSecurityGroup2":{"value":"[parameters('networkSecurityGroup2')]"},
+		   "networkSecurityGroup3":{"value":"[parameters('networkSecurityGroup3')]"},
+		   "subnetAddressPrefix1":{"value":"[parameters('subnetAddressPrefix1')]"},
+		   "subnetAddressPrefix2":{"value":"[parameters('subnetAddressPrefix2')]"},
+		   "subnetAddressPrefix3":{"value":"[parameters('subnetAddressPrefix3')]"}
+
+
         
         
-    }}},
+	}
+	}
+},
+
+
     {
         "type": "Microsoft.Resources/deployments",
         "apiVersion": "2018-05-01",

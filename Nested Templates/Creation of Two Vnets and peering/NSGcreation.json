@@ -2,18 +2,7 @@
 	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
 	"contentVersion": "1.0.0.0",
 	"parameters": {
-"networkSecurityGroup1": {
-			"type": "string"
-		},
-		"networkSecurityGroup2": {
-			"type": "string"
-		},
-		"networkSecurityGroup3": {
-			"type": "string"
-        },
-        "location": {
-            "type": "string"
-		}
+
     },
     
     "resources": [
