@@ -15,13 +15,16 @@ This template creates a Storage Account.Use the parameters.json file to create a
 You can press on the deploy button above inorder to directly deploy this ARM template on Azure portal.<br/>
 
 ### 2. Azure CLI:
-You can use Azure CLI in order to deploy the storage account using the command:
+You can use Azure CLI in order to deploy the template using the command:
 ```bash
 az group deployment create --resource-group <resource-group-name> --template-file template1.json 
 ```
 Before execuing the command you have to upload the template1.json file through the upload option given in the Azure CLI portal. Also replace the resource-group-name with your resource group.<br/>
 ### 3. Azure PowerShell:
- You can use Azure PoweShell in order to deploy the storage account using the command:
+ <a href="https://shell.azure.com" target="_blank">
+ <img name="launch-cloud-shell" src="https://docs.microsoft.com/azure/includes/media/cloud-shell-try-it/launchcloudshell.png" data-linktype="external">
+</a></br>
+ You can click on the above button to run Azure PoweShell in order to deploy the template using the command:
  ```bash
 New-AzResourceGroupDeployment -ResourceGroupName <resource-group-name> -TemplateFile template1.json
 ``` 

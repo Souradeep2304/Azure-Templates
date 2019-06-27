@@ -23,7 +23,7 @@ Before execuing the command you have to upload the template.json file through th
 <a href="https://shell.azure.com" target="_blank">
  <img name="launch-cloud-shell" src="https://docs.microsoft.com/azure/includes/media/cloud-shell-try-it/launchcloudshell.png" data-linktype="external">
 </a></br>
- You can click on the above button to run Azure PoweShell in order to deploy the storage account using the command:
+ You can click on the above button to run Azure PoweShell in order to deploy the template using the command:
  
 ```bash
 New-AzResourceGroupDeployment -ResourceGroupName <resource-group-name> -TemplateFile template.json
