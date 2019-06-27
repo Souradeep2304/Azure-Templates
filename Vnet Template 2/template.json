@@ -6,7 +6,7 @@
 			"type": "string",
 			"metadata":{
 
-				"description":"This is the name of the Vnet to be created."
+				"description":"This is the name of the master Vnet to be created."
 			}
 		},
 
