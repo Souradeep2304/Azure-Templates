@@ -6,7 +6,7 @@
 		{
 			"type": "string"
 		},
-		"NSG1": {
+		"networkSecurityGroup1": {
 			"type": "string"
 		},
 		"networkSecurityGroup2": {
@@ -40,7 +40,7 @@
 		{
 			"apiVersion": "2017-06-01",
 			"type": "Microsoft.Network/networkSecurityGroups",
-			"name": "[parameters('NSG1')]",
+			"name": "[parameters('networkSecurityGroup1')]",
 			"location": "[parameters('location')]",
 			"properties": {
 				"securityRules": [{
