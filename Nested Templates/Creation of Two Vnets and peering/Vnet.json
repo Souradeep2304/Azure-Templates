@@ -1,7 +1,30 @@
 {
 	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
 	"contentVersion": "1.0.0.0",
-    "parameters":{},
+    "parameters":{
+		"vNet": {
+			"type": "string",
+			"metadata":{
+
+				"description":"This is the name of the first Vnet to be created."
+			}
+		},
+		"location":{"type": "string"},
+		"networkSecurityGroup1":{"type": "string"},
+		"networkSecurityGroup2":{"type": "string"},
+		"networkSecurityGroup3":{"type": "string"},
+		"addressPrefix":{"type": "string"},
+		"subnetName1":{"type": "string"},
+		"subnetName2":{"type": "string"},
+		"subnetName3":{"type": "string"},
+		"subnetAddressPrefix1":{"type": "string"},
+		"subnetAddressPrefix2":{"type": "string"},
+		"subnetAddressPrefix3":{"type": "string"},
+		"firewallSubnet":{"type": "string"},
+		"enableDdosProtection":{"type": "string"}
+
+
+	},
     "resources": [
         {
 			"apiVersion": "2019-02-01",
