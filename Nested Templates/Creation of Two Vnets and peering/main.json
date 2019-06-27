@@ -140,7 +140,7 @@
   {
      "type": "Microsoft.Resources/deployments",
      "apiVersion": "2018-05-01",
-	 "name":"Creating NSG",
+	 "name":"L2",
      "properties": {
        "mode": "Incremental",
        "templateLink": {
@@ -165,7 +165,9 @@
     {
         "type": "Microsoft.Resources/deployments",
         "apiVersion": "2018-05-01",
-        "name": "First Vnet",
+        "name": "L1",
+        "dependsOn": ["L2"],
+
         "properties": {
           "mode": "Incremental",
     "templateLink": {
@@ -197,7 +199,8 @@
 	 {
         "type": "Microsoft.Resources/deployments",
         "apiVersion": "2018-05-01",
-        "name": "Second Vnet",
+        "name": "L3",
+        "dependsOn": ["L2"],
         "properties": {
           "mode": "Incremental",
     "templateLink": {
