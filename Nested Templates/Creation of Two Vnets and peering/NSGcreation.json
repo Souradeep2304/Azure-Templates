@@ -4,64 +4,31 @@
 	"parameters": {
 		"location":{"type": "string"},
 		"networkSecurityGroup1": {
-			"type": "string",
-			"metadata":{
-				"description":"Name of first security group"
-			}
+			"type": "string"
 		},
 		"networkSecurityGroup2": {
-			"type": "string",
-			"metadata":{
-				"description":"Name of second security group"
-			}
+			"type": "string"
 		},
 		"networkSecurityGroup3": {
-			"type": "string",
-			"metadata":{
-				"description":"Name of third security group"
-			}
+			"type": "string"
 		},
 		"subnetAddressPrefix1": {
-			"type": "string",
-			"defaultValue":"10.0.0.0/24",
-			"metadata": {
-				"description": "Address range for first subnet."
-			}
+			"type": "string"
 		},
 		"subnetAddressPrefix2": {
-			"type": "string",
-			"defaultValue":"10.0.1.0/24",
-			"metadata": {
-				"description": "Address range for second subnet."
-			}
+			"type": "string"
 		},
 		"subnetAddressPrefix3": {
-			"type": "string",
-			"defaultValue":"10.0.2.0/24",
-			"metadata": {
-				"description": "Address range for third subnet."
-			}
+			"type": "string"
 		},
 		"subnet1AddressPrefixOfSecondVnet": {
-			"type": "string",
-			"defaultValue":"15.0.0.0/24",
-			"metadata": {
-				"description": "Address range for first subnet."
-			}
+			"type": "string"
 		},
 		"subnet2AddressPrefixOfSecondVnet": {
-			"type": "string",
-			"defaultValue":"15.0.1.0/24",
-			"metadata": {
-				"description": "Address range for second subnet."
-			}
+			"type": "string"
 		},
 		"subnet3AddressPrefixOfSecondVnet": {
-			"type": "string",
-			"defaultValue":"15.0.2.0/24",
-			"metadata": {
-				"description": "Address range for third subnet."
-			}
+			"type": "string"
 		}
     },
     
