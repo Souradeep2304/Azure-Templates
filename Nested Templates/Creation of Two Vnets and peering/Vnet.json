@@ -21,7 +21,9 @@
 		"subnetAddressPrefix2":{"type": "string"},
 		"subnetAddressPrefix3":{"type": "string"},
 		"firewallSubnet":{"type": "string"},
-		"enableDdosProtection":{"type": "bool"}
+		"enableDdosProtection":{
+			"type": "bool"
+		}
 
 
 	},
