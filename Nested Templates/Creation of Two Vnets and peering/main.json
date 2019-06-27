@@ -149,7 +149,7 @@
        },
        "parameters": {
 		"location":{"value": "[parameters('location')]"},
-		"networkSecurityGroup1":{"value":"[parameters('networkSecurityGroup1')]"},
+		"NSG1":{"value":"[parameters('networkSecurityGroup1')]"},
 		"networkSecurityGroup2":{"value":"[parameters('networkSecurityGroup2')]"},
 		"networkSecurityGroup3":{"value":"[parameters('networkSecurityGroup3')]"},
 		"subnetAddressPrefix1":{"value":"[parameters('subnetAddressPrefix1')]"},

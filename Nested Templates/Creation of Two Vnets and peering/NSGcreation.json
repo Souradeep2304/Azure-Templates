@@ -1,14 +1,46 @@
 {
 	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
 	"contentVersion": "1.0.0.0",
-	
+	"parameters": {
+		"location":
+		{
+			"type": "string"
+		},
+		"NSG1": {
+			"type": "string"
+		},
+		"networkSecurityGroup2": {
+			"type": "string"
+		},
+		"networkSecurityGroup3": {
+			"type": "string"
+		},
+		"subnetAddressPrefix1": {
+			"type": "string"
+		},
+		"subnetAddressPrefix2": {
+			"type": "string"
+		},
+		"subnetAddressPrefix3": {
+			"type": "string"
+		},
+		"subnet1AddressPrefixOfSecondVnet": {
+			"type": "string"
+		},
+		"subnet2AddressPrefixOfSecondVnet": {
+			"type": "string"
+		},
+		"subnet3AddressPrefixOfSecondVnet": {
+			"type": "string"
+		}
+    },
     
     "resources": [
 
 		{
 			"apiVersion": "2017-06-01",
 			"type": "Microsoft.Network/networkSecurityGroups",
-			"name": "[parameters('networkSecurityGroup1')]",
+			"name": "[parameters('NSG1')]",
 			"location": "[parameters('location')]",
 			"properties": {
 				"securityRules": [{
