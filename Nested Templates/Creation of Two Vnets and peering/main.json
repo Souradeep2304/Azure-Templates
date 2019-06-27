@@ -2,6 +2,9 @@
 	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters":{
+		"location": {
+			"type": "string"
+		},
         "vNet1": {
 			"type": "string",
 			"metadata":{
@@ -9,11 +12,8 @@
 				"description":"This is the name of the first Vnet to be created."
 			}
         },
-      
-
-		"location": {
-			"type": "string"
-		},
+   
+	
 		"addressPrefix1": {
 			"type": "string",
 			"defaultValue": "10.0.0.0/16",
@@ -21,9 +21,6 @@
 				"description": "Adress range for the Vnet1."
 			}
 		},
-       
-        
-        
         "subnetName1": {
         "type": "string"
 
@@ -123,10 +120,16 @@
 		}
 	},
 	"networkSecurityGroup2": {
-		"type": "string"
+		"type": "string",
+		"metadata":{
+			"description":"Name of second security group"
+		}
 	},
 	"networkSecurityGroup3": {
-		"type": "string"
+		"type": "string",
+		"metadata":{
+			"description":"Name of third security group"
+		}
 	},
 	"enableDdosProtection": {
 		"type": "bool"
@@ -137,7 +140,7 @@
   {
      "type": "Microsoft.Resources/deployments",
      "apiVersion": "2018-05-01",
-     "name": "linkedTemplate1",
+     "name":"Creating NSG",
      "properties": {
        "mode": "NSG Creation",
        "templateLink": {
@@ -145,12 +148,16 @@
           "contentVersion":"1.0.0.0"
        },
        "parameters": {
+		"location":{"value": "[parameters('location')]"},
 		"networkSecurityGroup1":{"value":"[parameters('networkSecurityGroup1')]"},
 		"networkSecurityGroup2":{"value":"[parameters('networkSecurityGroup2')]"},
 		"networkSecurityGroup3":{"value":"[parameters('networkSecurityGroup3')]"},
 		"subnetAddressPrefix1":{"value":"[parameters('subnetAddressPrefix1')]"},
 		"subnetAddressPrefix2":{"value":"[parameters('subnetAddressPrefix2')]"},
-		"subnetAddressPrefix3":{"value":"[parameters('subnetAddressPrefix3')]"}
+		"subnetAddressPrefix3":{"value":"[parameters('subnetAddressPrefix3')]"},
+		"subnet1AddressPrefixOfSecondVnet":{"value":"[parameters('subnet1AddressPrefixOfSecondVnet')]"},
+		"subnet2AddressPrefixOfSecondVnet":{"value":"[parameters('subnet2AddressPrefixOfSecondVnet')]"},
+		"subnet3AddressPrefixOfSecondVnet":{"value":"[parameters('subnet3AddressPrefixOfSecondVnet')]"}
 
 
         
@@ -162,10 +169,12 @@
         "properties": {
           "mode": "Incremental",
     "templateLink": {
-        "uri":"https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Vnet%20Template%202/template.json",
+        "uri":"https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Nested%20Templates/Creation%20of%20Two%20Vnets%20and%20peering/Vnet.json",
         "contentVersion":"1.0.0.0"
      },
      "parameters": {
+		 "vnet":{"value":"[parameters('vNet1')]"},
+		"location":{"value": "[parameters('location')]"},
 		"subnetName1":{"value":"[parameters('subnetName1')]"},
 		"subnetName2":{"value":"[parameters('subnetName2')]"},
 		"subnetName3":{"value":"[parameters('subnetName3')]"},
@@ -193,13 +202,17 @@
         "contentVersion":"1.0.0.0"
      },
      "parameters": {
+		"vnet":{"value":"[parameters('vNet2')]"},
+		"location":{"value": "[parameters('location')]"},
 		"subnetName1":{"value":"[parameters('subnet1NameOfSecondVnet')]"},
 		"subnetName2":{"value":"[parameters('subnet2NameOfSecondVnet')]"},
 		"subnetName3":{"value":"[parameters('subnet3NameOfSecondVnet')]"},
 		"subnetAddressPrefix1":{"value":"[parameters('subnet1AddressPrefixOfSecondVnet')]"},
 		"subnetAddressPrefix2":{"value":"[parameters('subnet2AddressPrefixOfSecondVnet')]"},
 		"subnetAddressPrefix3":{"value":"[parameters('subnet3AddressPrefixOfSecondVnet')]"},
-		"firewallSubnet":{"value":"[parameters('firewallSubnetOfSecondVnet')]"}
+		"firewallSubnet":{"value":"[parameters('firewallSubnetOfSecondVnet')]"},
+		"enableDdosProtection":{"value":"[parameters('enableDdosProtection')]"}
+
 	 }
 	}
 }

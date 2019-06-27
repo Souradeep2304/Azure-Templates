@@ -2,7 +2,67 @@
 	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
 	"contentVersion": "1.0.0.0",
 	"parameters": {
-
+		"location":{"type": "string"},
+		"networkSecurityGroup1": {
+			"type": "string",
+			"metadata":{
+				"description":"Name of first security group"
+			}
+		},
+		"networkSecurityGroup2": {
+			"type": "string",
+			"metadata":{
+				"description":"Name of second security group"
+			}
+		},
+		"networkSecurityGroup3": {
+			"type": "string",
+			"metadata":{
+				"description":"Name of third security group"
+			}
+		},
+		"subnetAddressPrefix1": {
+			"type": "string",
+			"defaultValue":"10.0.0.0/24",
+			"metadata": {
+				"description": "Address range for first subnet."
+			}
+		},
+		"subnetAddressPrefix2": {
+			"type": "string",
+			"defaultValue":"10.0.1.0/24",
+			"metadata": {
+				"description": "Address range for second subnet."
+			}
+		},
+		"subnetAddressPrefix3": {
+			"type": "string",
+			"defaultValue":"10.0.2.0/24",
+			"metadata": {
+				"description": "Address range for third subnet."
+			}
+		},
+		"subnet1AddressPrefixOfSecondVnet": {
+			"type": "string",
+			"defaultValue":"15.0.0.0/24",
+			"metadata": {
+				"description": "Address range for first subnet."
+			}
+		},
+		"subnet2AddressPrefixOfSecondVnet": {
+			"type": "string",
+			"defaultValue":"15.0.1.0/24",
+			"metadata": {
+				"description": "Address range for second subnet."
+			}
+		},
+		"subnet3AddressPrefixOfSecondVnet": {
+			"type": "string",
+			"defaultValue":"15.0.2.0/24",
+			"metadata": {
+				"description": "Address range for third subnet."
+			}
+		}
     },
     
     "resources": [
@@ -21,7 +81,7 @@
 							"sourcePortRange": "*",
 							"destinationPortRanges": ["80","443"],
 							"sourceAddressPrefix": "*",
-							"destinationAddressPrefix": "[parameters('subnetAddressPrefix1')]",
+							"destinationAddressPrefixes": ["[parameters('subnetAddressPrefix1')]","[parameters('subnet1AddressPrefixOfSecondVnet')]"],
 							"access": "Allow",
 							"priority": 100,
 							"direction": "Inbound"
@@ -36,7 +96,7 @@
 							"sourcePortRange": "*",
 							"destinationPortRange": "*",
 							"sourceAddressPrefix": "*",
-							"destinationAddressPrefix": "[parameters('subnetAddressPrefix3')]",
+							"destinationAddressPrefixes":[ "[parameters('subnetAddressPrefix3')]","[parameters('subnet3AddressPrefixOfSecondVnet')]"],
 							"access": "Deny",
 							"priority": 100,
 							"direction": "Outbound"
@@ -49,8 +109,8 @@
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
 							"destinationPortRanges": ["80","443"],
-							"sourceAddressPrefix": "[parameters('subnetAddressPrefix1')]",
-							"destinationAddressPrefix": "[parameters('subnetAddressPrefix2')]",
+							"sourceAddressPrefixes": ["[parameters('subnetAddressPrefix1')]","[parameters('subnet1AddressPrefixOfSecondVnet')]"],
+							"destinationAddressPrefixes": ["[parameters('subnetAddressPrefix2')]","[parameters('subnet2AddressPrefixOfSecondVnet')]"],
 							"access": "Allow",
 							"priority": 110,
 							"direction": "Outbound"
@@ -74,8 +134,8 @@
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
 							"destinationPortRanges":[ "80","443"],
-							"sourceAddressPrefix": "[parameters('subnetAddressPrefix1')]",
-							"destinationAddressPrefix": "[parameters('subnetAddressPrefix2')]",
+							"sourceAddressPrefixes": ["[parameters('subnetAddressPrefix1')]","[parameters('subnet1AddressPrefixOfSecondVnet')]"],
+							"destinationAddressPrefixes": ["[parameters('subnetAddressPrefix2')]","[parameters('subnet2AddressPrefixOfSecondVnet')]"],
 							"access": "Allow",
 							"priority": 100,
 							"direction": "Inbound"
@@ -88,8 +148,8 @@
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
 							"destinationPortRanges": ["80","443"],
-							"sourceAddressPrefix": "[parameters('subnetAddressPrefix3')]",
-							"destinationAddressPrefix": "[parameters('subnetAddressPrefix2')]",
+							"sourceAddressPrefixes": ["[parameters('subnetAddressPrefix3')]","[parameters('subnet3AddressPrefixOfSecondVnet')]"],
+							"destinationAddressPrefixes": ["[parameters('subnetAddressPrefix2')]","[parameters('subnet2AddressPrefixOfSecondVnet')]"],
 							"access": "Allow",
 							"priority": 110,
 							"direction": "Inbound"
@@ -102,8 +162,8 @@
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
 							"destinationPortRange": "21",
-							"sourceAddressPrefix": "[parameters('subnetAddressPrefix3')]",
-							"destinationAddressPrefix": "[parameters('subnetAddressPrefix2')]",
+							"sourceAddressPrefixes": ["[parameters('subnetAddressPrefix3')]","[parameters('subnet3AddressPrefixOfSecondVnet')]"],
+							"destinationAddressPrefixes": ["[parameters('subnetAddressPrefix2')]","[parameters('subnet2AddressPrefixOfSecondVnet')]"],
 							"access": "Allow",
 							"priority": 120,
 							"direction": "Inbound"
@@ -116,8 +176,8 @@
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
 							"destinationPortRange": "3306",
-							"sourceAddressPrefix": "[parameters('subnetAddressPrefix2')]",
-							"destinationAddressPrefix": "[parameters('subnetAddressPrefix3')]",
+							"sourceAddressPrefixes": ["[parameters('subnetAddressPrefix2')]","[parameters('subnet2AddressPrefixOfSecondVnet')]"],
+							"destinationAddressPrefixes": ["[parameters('subnetAddressPrefix3')]","[parameters('subnet3AddressPrefixOfSecondVnet')]"],
 							"access": "Allow",
 							"priority": 100,
 							"direction": "Outbound"
@@ -130,8 +190,8 @@
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
 							"destinationPortRanges": ["80","443"],
-							"sourceAddressPrefix": "[parameters('subnetAddressPrefix2')]",
-							"destinationAddressPrefix": "[parameters('subnetAddressPrefix1')]",
+							"sourceAddressPrefixes": ["[parameters('subnetAddressPrefix2')]","[parameters('subnet2AddressPrefixOfSecondVnet')]"],
+							"destinationAddressPrefixes": ["[parameters('subnetAddressPrefix1')]","[parameters('subnet1AddressPrefixOfSecondVnet')]"],
 							"access": "Allow",
 							"priority": 110,
 							"direction": "Outbound"
@@ -144,8 +204,8 @@
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
 							"destinationPortRanges": ["80","443"],
-							"sourceAddressPrefix": "[parameters('subnetAddressPrefix2')]",
-							"destinationAddressPrefix": "[parameters('subnetAddressPrefix3')]",
+							"sourceAddressPrefixes": ["[parameters('subnetAddressPrefix2')]","[parameters('subnet2AddressPrefixOfSecondVnet')]"],
+							"destinationAddressPrefixes": ["[parameters('subnetAddressPrefix3')]","[parameters('subnet3AddressPrefixOfSecondVnet')]"],
 							"access": "Allow",
 							"priority": 120,
 							"direction": "Outbound"
@@ -171,8 +231,8 @@
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
 							"destinationPortRange": "3306",
-							"sourceAddressPrefix": "[parameters('subnetAddressPrefix2')]",
-							"destinationAddressPrefix": "[parameters('subnetAddressPrefix3')]",
+							"sourceAddressPrefixes": ["[parameters('subnetAddressPrefix2')]","[parameters('subnet2AddressPrefixOfSecondVnet')]"],
+							"destinationAddressPrefixes": ["[parameters('subnetAddressPrefix3')]","[parameters('subnet3AddressPrefixOfSecondVnet')]"],
 							"access": "Allow",
 							"priority": 100,
 							"direction": "Inbound"
@@ -185,8 +245,8 @@
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
 							"destinationPortRange": "*",
-							"sourceAddressPrefix": "[parameters('subnetAddressPrefix1')]",
-							"destinationAddressPrefix": "[parameters('subnetAddressPrefix3')]",
+							"sourceAddressPrefixes": ["[parameters('subnetAddressPrefix1')]","[parameters('subnet1AddressPrefixOfSecondVnet')]"],
+							"destinationAddressPrefixes": ["[parameters('subnetAddressPrefix3')]","[parameters('subnet3AddressPrefixOfSecondVnet')]"],
 							"access": "Deny",
 							"priority": 110,
 							"direction": "Inbound"
@@ -199,8 +259,8 @@
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
 							"destinationPortRange": "22",
-							"sourceAddressPrefix": "[parameters('subnetAddressPrefix3')]",
-							"destinationAddressPrefix": "[parameters('subnetAddressPrefix3')]",
+							"sourceAddressPrefixes": ["[parameters('subnetAddressPrefix3')]","[parameters('subnet3AddressPrefixOfSecondVnet')]"],
+							"destinationAddressPrefixes": ["[parameters('subnetAddressPrefix3')]","[parameters('subnet3AddressPrefixOfSecondVnet')]"],
 							"access": "Allow",
 							"priority": 120,
 							"direction": "Inbound"
@@ -213,8 +273,8 @@
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
 							"destinationPortRange": "21",
-							"sourceAddressPrefix": "[parameters('subnetAddressPrefix2')]",
-							"destinationAddressPrefix": "[parameters('subnetAddressPrefix3')]",
+							"sourceAddressPrefixes": ["[parameters('subnetAddressPrefix2')]","[parameters('subnet2AddressPrefixOfSecondVnet')]"],
+							"destinationAddressPrefixes": ["[parameters('subnetAddressPrefix3')]","[parameters('subnet3AddressPrefixOfSecondVnet')]"],
 							"access": "Allow",
 							"priority": 130,
 							"direction": "Inbound"
@@ -227,8 +287,8 @@
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
 							"destinationPortRanges": ["80","443"],
-							"sourceAddressPrefix": "[parameters('subnetAddressPrefix3')]",
-							"destinationAddressPrefix": "[parameters('subnetAddressPrefix2')]",
+							"sourceAddressPrefixes": ["[parameters('subnetAddressPrefix3')]","[parameters('subnet3AddressPrefixOfSecondVnet')]"],
+							"destinationAddressPrefixes": ["[parameters('subnetAddressPrefix2')]","[parameters('subnet2AddressPrefixOfSecondVnet')]"],
 							"access": "Allow",
 							"priority": 100,
 							"direction": "Outbound"
@@ -241,8 +301,8 @@
 							"protocol": "Tcp",
 							"sourcePortRange": "*",
 							"destinationPortRange": "21",
-							"sourceAddressPrefix": "[parameters('subnetAddressPrefix3')]",
-							"destinationAddressPrefix": "[parameters('subnetAddressPrefix2')]",
+							"sourceAddressPrefixes": ["[parameters('subnetAddressPrefix3')]","[parameters('subnet3AddressPrefixOfSecondVnet')]"],
+							"destinationAddressPrefixes": ["[parameters('subnetAddressPrefix2')]","[parameters('subnet2AddressPrefixOfSecondVnet')]"],
 							"access": "Allow",
 							"priority": 110,
 							"direction": "Outbound"
