@@ -143,7 +143,7 @@
 	 "name":"Creating NSG",
 	 "location":"[parameters('location')]",
      "properties": {
-       "mode": "NSG Creation",
+       "mode": "Incremental",
        "templateLink": {
           "uri":"https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Nested%20Templates/Creation%20of%20Two%20Vnets%20and%20peering/NSGcreation.json",
           "contentVersion":"1.0.0.0"
