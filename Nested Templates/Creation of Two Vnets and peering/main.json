@@ -9,13 +9,7 @@
 				"description":"This is the name of the first Vnet to be created."
 			}
         },
-        "vNet2": {
-			"type": "string",
-			"metadata":{
-
-				"description":"This is the name of the second Vnet to be created."
-			}
-		},
+      
 
 		"location": {
 			"type": "string"
@@ -27,14 +21,7 @@
 				"description": "Adress range for the Vnet1."
 			}
 		},
-        
-        "addressPrefix2": {
-			"type": "string",
-			"defaultValue": "10.0.0.0/16",
-			"metadata": {
-				"description": "Adress range for the Vnet2."
-			}
-		},
+       
         
         
         "subnetName1": {
@@ -68,176 +55,154 @@
             "description": "Address range for third subnet"
         }
     },
-    "firewallSubnet": {
+    "firewallSubnetOfVnet1": {
         "type": "string",
         "defaultValue":"10.0.3.0/24",
         "metadata": {
             "description": "Address range for firewall subnet"
         }
 	},
+	"vNet2": {
+		"type": "string",
+		"metadata":{
+
+			"description":"This is the name of the second Vnet to be created."
+		}
+	},
+	 
+	"addressPrefixOfSecondVnet": {
+		"type": "string",
+		"defaultValue": "15.0.0.0/16",
+		"metadata": {
+			"description": "Adress range for the Vnet2."
+		}
+	},
+	 
+	"subnet1NameOfSecondVnet": {
+        "type": "string"
+
+    },
+    "subnet1AddressPrefixOfSecondVnet": {
+        "type": "string",
+        "defaultValue":"15.0.0.0/24",
+        "metadata": {
+            "description": "Address range for first subnet."
+        }
+    },
+    "subnet2NameOfSecondVnet": {
+        "type": "string"
+    },
+    "subnet2AddressPrefixOfSecondVnet": {
+        "type": "string",
+        "defaultValue":"15.0.1.0/24",
+        "metadata": {
+            "description": "Address range for second subnet"
+        }
+    },
+    "subnet3NameOfSecondVnet": {
+        "type": "string"
+    },
+    "subnet3AddressPrefixOfSecondVnet": {
+        "type": "string",
+        "defaultValue":"15.0.2.0/24",
+        "metadata": {
+            "description": "Address range for third subnet"
+        }
+    },
+    "firewallSubnetOfSecondVnet": {
+        "type": "string",
+        "defaultValue":"15.0.3.0/24",
+        "metadata": {
+            "description": "Address range for firewall subnet"
+        }
+	},
 	"networkSecurityGroup1": {
-		"type": "string"
+		"type": "string",
+		"metadata":{
+			"description":"Name of first security group"
+		}
 	},
 	"networkSecurityGroup2": {
 		"type": "string"
 	},
 	"networkSecurityGroup3": {
 		"type": "string"
+	},
+	"enableDdosProtection": {
+		"type": "bool"
 	}
 },
+
     "resources": [
   {
      "type": "Microsoft.Resources/deployments",
      "apiVersion": "2018-05-01",
      "name": "linkedTemplate1",
      "properties": {
-       "mode": "Incremental",
-       "templateLink": {
-          "uri":"https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Vnet%20Template%202/template.json",
-          "contentVersion":"1.0.0.0"
-       },
-       "parametersLink": {
-        
-        
-    }}},
-    {
-        "type": "Microsoft.Resources/deployments",
-        "apiVersion": "2018-05-01",
-        "name": "linkedTemplate2",
-        "properties": {
-          "mode": "Incremental",
-    "templateLink": {
-        "uri":"https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Vnet%20Template%202/template.json",
-        "contentVersion":"1.0.0.0"
-     },
-     "parametersLink": {
-     
-    }
-}
-
-     }
-  
-]
-{
-	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters":{
-        "vNet1": {
-			"type": "string",
-			"metadata":{
-
-				"description":"This is the name of the first Vnet to be created."
-			}
-        },
-        "vNet2": {
-			"type": "string",
-			"metadata":{
-
-				"description":"This is the name of the second Vnet to be created."
-			}
-		},
-
-		"location": {
-			"type": "string"
-		},
-		"addressPrefix1": {
-			"type": "string",
-			"defaultValue": "10.0.0.0/16",
-			"metadata": {
-				"description": "Adress range for the Vnet1."
-			}
-		},
-        
-        "addressPrefix2": {
-			"type": "string",
-			"defaultValue": "10.0.0.0/16",
-			"metadata": {
-				"description": "Adress range for the Vnet2."
-			}
-		},
-        
-        
-        "subnetName1": {
-        "type": "string"
-
-    },
-    "subnetAddressPrefix1": {
-        "type": "string",
-        "defaultValue":"10.0.0.0/24",
-        "metadata": {
-            "description": "Address range for first subnet."
-        }
-    },
-    "subnetName2": {
-        "type": "string"
-    },
-    "subnetAddressPrefix2": {
-        "type": "string",
-        "defaultValue":"10.0.1.0/24",
-        "metadata": {
-            "description": "Address range for second subnet"
-        }
-    },
-    "subnetName3": {
-        "type": "string"
-    },
-    "subnetAddressPrefix3": {
-        "type": "string",
-        "defaultValue":"10.0.2.0/24",
-        "metadata": {
-            "description": "Address range for third subnet"
-        }
-    },
-    "firewallSubnet": {
-        "type": "string",
-        "defaultValue":"10.0.3.0/24",
-        "metadata": {
-            "description": "Address range for firewall subnet"
-        }
-    }},
-    "resources": [
-  {
-     "type": "Microsoft.Resources/deployments",
-     "apiVersion": "2018-05-01",
-     "name": "linkedTemplate1",
-     "properties": {
-       "mode": "Incremental",
+       "mode": "NSG Creation",
        "templateLink": {
           "uri":"https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Nested%20Templates/Creation%20of%20Two%20Vnets%20and%20peering/NSGcreation.json",
           "contentVersion":"1.0.0.0"
        },
        "parameters": {
-		   "networkSecurityGroup1":{"value":"[parameters('networkSecurityGroup1')]"},
-		   "networkSecurityGroup2":{"value":"[parameters('networkSecurityGroup2')]"},
-		   "networkSecurityGroup3":{"value":"[parameters('networkSecurityGroup3')]"},
-		   "subnetAddressPrefix1":{"value":"[parameters('subnetAddressPrefix1')]"},
-		   "subnetAddressPrefix2":{"value":"[parameters('subnetAddressPrefix2')]"},
-		   "subnetAddressPrefix3":{"value":"[parameters('subnetAddressPrefix3')]"}
+		"networkSecurityGroup1":{"value":"[parameters('networkSecurityGroup1')]"},
+		"networkSecurityGroup2":{"value":"[parameters('networkSecurityGroup2')]"},
+		"networkSecurityGroup3":{"value":"[parameters('networkSecurityGroup3')]"},
+		"subnetAddressPrefix1":{"value":"[parameters('subnetAddressPrefix1')]"},
+		"subnetAddressPrefix2":{"value":"[parameters('subnetAddressPrefix2')]"},
+		"subnetAddressPrefix3":{"value":"[parameters('subnetAddressPrefix3')]"}
 
 
         
-        
-	}
-	}
-},
-
-
+    }}},
     {
         "type": "Microsoft.Resources/deployments",
         "apiVersion": "2018-05-01",
-        "name": "linkedTemplate2",
+        "name": "First Vnet",
         "properties": {
           "mode": "Incremental",
     "templateLink": {
         "uri":"https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Vnet%20Template%202/template.json",
         "contentVersion":"1.0.0.0"
      },
-     "parametersLink": {
-     
+     "parameters": {
+		"subnetName1":{"value":"[parameters('subnetName1')]"},
+		"subnetName2":{"value":"[parameters('subnetName2')]"},
+		"subnetName3":{"value":"[parameters('subnetName3')]"},
+		"subnetAddressPrefix1":{"value":"[parameters('subnetAddressPrefix1')]"},
+		"subnetAddressPrefix2":{"value":"[parameters('subnetAddressPrefix2')]"},
+		"subnetAddressPrefix3":{"value":"[parameters('subnetAddressPrefix3')]"},
+		"addressPrefix1":{"value":"[parameters('addressPrefix1')]"},
+		
+		"firewallSubnet":{"value":"[parameters('firewallSubnetOfVnet1')]"},
+		"enableDdosProtection":{"value":"[parameters('enableDdosProtection')]"}
     }
 }
 
-     }
+     },
   
-]
+	 
+	 {
+        "type": "Microsoft.Resources/deployments",
+        "apiVersion": "2018-05-01",
+        "name": "Second Vnet",
+        "properties": {
+          "mode": "Incremental",
+    "templateLink": {
+        "uri":"https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Nested%20Templates/Creation%20of%20Two%20Vnets%20and%20peering/Vnet.json",
+        "contentVersion":"1.0.0.0"
+     },
+     "parameters": {
+		"subnetName1":{"value":"[parameters('subnet1NameOfSecondVnet')]"},
+		"subnetName2":{"value":"[parameters('subnet2NameOfSecondVnet')]"},
+		"subnetName3":{"value":"[parameters('subnet3NameOfSecondVnet')]"},
+		"subnetAddressPrefix1":{"value":"[parameters('subnet1AddressPrefixOfSecondVnet')]"},
+		"subnetAddressPrefix2":{"value":"[parameters('subnet2AddressPrefixOfSecondVnet')]"},
+		"subnetAddressPrefix3":{"value":"[parameters('subnet3AddressPrefixOfSecondVnet')]"},
+		"firewallSubnet":{"value":"[parameters('firewallSubnetOfSecondVnet')]"}
+	 }
+	}
 }
+	 ]
+	
+	}
