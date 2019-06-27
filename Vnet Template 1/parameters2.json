@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vNetName": {
+      "value": "Vnet3"
+    },
+ 
+    "location": {
+      "value": "West India"
+    },
+    "addressPrefix": {
+      "value": "14.0.0.0/16"
+    },
+    "subnetAddressPrefix": {
+      "value": "14.0.0.0/24"
+    },
+    "enableDdosProtection": {
+      "value": false
+    }
+  }
+}
