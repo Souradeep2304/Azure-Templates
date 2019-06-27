@@ -29,7 +29,8 @@
 			"defaultValue":"10.0.0.0/24",
 			"metadata": {
 				"description": "Address range for first subnet."
-			},
+			}
+		},
 		"subnetName2": {
 			"type": "string"
 		},
@@ -392,6 +393,7 @@
 				],
 				"enableDdosProtection": "[parameters('enableDdosProtection')]"
 			}
+
 		}
 	]
 
