@@ -22,12 +22,40 @@
 		},
 		"subnetName1": {
 			"type": "string"
+
 		},
+		"subnetAddressPrefix1": {
+			"type": "string",
+			"defaultValue":"10.0.0.0/24",
+			"metadata": {
+				"description": "Address range for first subnet."
+			},
 		"subnetName2": {
 			"type": "string"
 		},
+		"subnetAddressPrefix2": {
+			"type": "string",
+			"defaultValue":"10.0.1.0/24",
+			"metadata": {
+				"description": "Address range for second subnet"
+			}
+		},
 		"subnetName3": {
 			"type": "string"
+		},
+		"subnetAddressPrefix3": {
+			"type": "string",
+			"defaultValue":"10.0.2.0/24",
+			"metadata": {
+				"description": "Address range for third subnet"
+			}
+		},
+		"firewallSubnet": {
+			"type": "string",
+			"defaultValue":"10.0.3.0/24",
+			"metadata": {
+				"description": "Address range for firewall subnet"
+			}
 		},
 		"networkSecurityGroup1": {
 			"type": "string"
@@ -38,30 +66,7 @@
 		"networkSecurityGroup3": {
 			"type": "string"
 		},
-		"subnetAddressPrefix1": {
-			"type": "string",
-			"metadata": {
-				"description": "Address range for first subnet."
-			}
-		},
-		"subnetAddressPrefix2": {
-			"type": "string",
-			"metadata": {
-				"description": "Address range for second subnet"
-			}
-		},
-		"subnetAddressPrefix3": {
-			"type": "string",
-			"metadata": {
-				"description": "Address range for third subnet"
-			}
-		},
-		"firewallSubnet": {
-			"type": "string",
-			"metadata": {
-				"description": "Address range for firewall subnet"
-			}
-		},
+		
 		"enableDdosProtection": {
 			"type": "bool"
 		}
