@@ -31,11 +31,7 @@
 			"name": "[parameters('vNet')]",
 			"type": "Microsoft.Network/virtualNetworks",
 			"location": "[parameters('location')]",
-			"dependsOn": [
-				"[concat('Microsoft.Network/networkSecurityGroups/', parameters('networkSecurityGroup1'))]",
-				"[concat('Microsoft.Network/networkSecurityGroups/', parameters('networkSecurityGroup2'))]",
-				"[concat('Microsoft.Network/networkSecurityGroups/', parameters('networkSecurityGroup3'))]"
-			],
+			
 			"properties": {
 				"addressSpace": {
 					"addressPrefixes": ["[parameters('addressPrefix')]"]
