@@ -24,8 +24,9 @@ Before execuing the command you have to upload the template1.json file through t
  <a href="https://shell.azure.com" target="_blank">
  <img name="launch-cloud-shell" src="https://docs.microsoft.com/azure/includes/media/cloud-shell-try-it/launchcloudshell.png" data-linktype="external">
 </a></br>
+
  You can click on the above button to run Azure PoweShell in order to deploy the template using the command:
- ```bash
+```bash
 New-AzResourceGroupDeployment -ResourceGroupName <resource-group-name> -TemplateFile template1.json
 ``` 
 Before using the powershell command do remember to upload the file using the upload option and then change to home directory. Also replace the resource-group-name with your resource group.
