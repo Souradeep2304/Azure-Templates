@@ -9,10 +9,10 @@ This template creates a Vnet with 3 subnets. Along with the subnets there will b
 
 ## Three Modes of Execution:<br/>
 ### 1. Using Deploy Button:
- <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSouradeep2304%2FAzure-Templates%2Fmaster%2FVnet%20Template%202%2Ftemplate.json" target="_blank">
+ <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSouradeep2304%2FAzure-Templates%2Fmaster%2FNested%20Templates%2FCreation%20of%20Two%20Vnets%20and%20peering%2Fmain.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
-<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2FSouradeep2304%2FAzure-Templates%2Fmaster%2FVnet%20Template%202%2Ftemplate.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSouradeep2304%2FAzure-Templates%2Fmaster%2FNested%20Templates%2FCreation%20of%20Two%20Vnets%20and%20peering%2Fmain.json" target="_blank">
     <img src="http://armviz.io/visualizebutton.png"/>
 </a><br/>
 You can press on the deploy button above inorder to directly deploy this ARM template on Azure portal.<br/>
