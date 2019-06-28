@@ -1,7 +1,7 @@
 Connect-AzAccount
 
 $RG="MyAzureRsrcGrp"
-$port1=3306
+$port1=3307
 
 $rulename1="DisasterRecovery1"
 $rulename2="DisasterRecovery2"
