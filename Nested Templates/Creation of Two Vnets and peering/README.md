@@ -6,7 +6,7 @@ At the base of the model lies the database tier where data gets stored in a data
 
 This template creates a Vnet with 3 subnets. Along with the subnets there will be 3 network security groups created with the rules predefined in the template file for WEB-API-DATBASE architecture. These 3 security groups will be assosciated with each of the subnets respectively. After that the Vnets created will be peered automatically by the template.You can use the parameter.json file in order to use the default values for the template deployment.</br>
 
-![picture](./ARCH.png)
+<p align="center">![picture](./ARCH.png)</p>
 
 
 
