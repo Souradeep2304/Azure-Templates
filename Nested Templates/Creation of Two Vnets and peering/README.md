@@ -8,7 +8,7 @@ This template creates a Vnet with 3 subnets. Along with the subnets there will b
 
 <p align="center">
 <img src="./ARCH.png">
-<img src="./ARCH2.jpeg">
+<img src="./ARCH2.jpg">
 </p>
 
 
