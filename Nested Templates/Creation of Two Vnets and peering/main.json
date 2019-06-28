@@ -133,8 +133,31 @@
 	},
 	"enableDdosProtection": {
 		"type": "bool"
-	}
+    },
+ 
+    "virtualNetworkAccess":{"type":"bool",
+        "metadata":{
+            "description":"Allow access to the virtual networks."
+        }
+    },
+    "forwardedTraffic":{"type":"bool",
+        "metadata":{
+            "description":"allow traffic forwarded by a network virtual appliance in a virtual network"
+        }
+    },
+    "gatewayTransit":{"type":"bool",
+        "metadata":{
+            "description":"If there is a virtual network gateway assosciated with the vnet."
+        }
+    },
+    "remoteGateways":{"type":"bool",
+        "metadata":{
+            "description":"To allow traffic from Vnet1 to Vnet2 through the gateway of Vnet2"
+        }
+    }
+
 },
+
 
     "resources": [
   {
@@ -225,6 +248,28 @@
 
 	 }
 	}
+},
+{
+    "type": "Microsoft.Resources/deployments",
+    "apiVersion": "2018-05-01",
+    "name": "L4",
+    "dependsOn": ["L3","L1"],
+    "properties": {
+      "mode": "Incremental",
+"templateLink": {
+    "uri":"https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Vnet%20Peering/template3.json",
+    "contentVersion":"1.0.0.0"
+ },
+ "parameters": {
+    "vNet1Name":{"value": "[parameters('vNet1')]"},
+    "vNet2Name":{"value": "[parameters('vNet2')]"},
+    "virtualNetworkAccess":{"value":"[parameters('virtualNetworkAccess')]"},
+         "forwardedTraffic": {"value":"[parameters('forwardedTraffic')]"},
+         "gatewayTransit": {"value":"[parameters('gatewayTransit')]"},
+         "RemoteGateways": {"value":"[parameters('remoteGateways')]"}
+
+ }
+}
 }
 	 ]
 	
