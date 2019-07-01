@@ -9,6 +9,7 @@ This template creates a Vnet with 3 subnets. Along with the subnets there will b
 <p align="center">
 <img src="./ARCH.png"></br>
 Figure 1.1: Working of the Architecture 
+</br></br>
 <img src="./ARCHF.jpg">
 Figure 1.2: Detailed Architecture in Azure
 
