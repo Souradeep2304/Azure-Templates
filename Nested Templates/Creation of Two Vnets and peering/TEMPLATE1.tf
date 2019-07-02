@@ -7,7 +7,7 @@ resource "azurerm_resource_group" "test" {
 }
 
 resource "azurerm_template_deployment" "test" {
-  name                = "Main-Deploy"
+  name                = "Main-Deploy-1"
   resource_group_name = "${azurerm_resource_group.test.name}"
 
   template_body = "${file("./main.json")}"
@@ -41,7 +41,6 @@ resource "azurerm_template_deployment" "test" {
       "secondNetworkSecurityGroupInSecondLocaion"="A2",
       "thirdNetworkSecurityGroupInSecondLocaion"="D2",
       "enableDdosProtection"=null,
-      "virtualNetworkAccess"=true,
       "forwardedTraffic"=null,
       "gatewayTransit"=null,
       "remoteGateways"=null
