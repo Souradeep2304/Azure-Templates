@@ -14,6 +14,9 @@ This template creates a Vnet with a default subnet named subnet1. You can use th
 You can press on the deploy button above inorder to directly deploy this ARM template on Azure portal.<br/>
 
 ### 2. Azure CLI:
+<a href="https://shell.azure.com" target="_blank">
+ <img name="launch-cloud-shell" src="https://docs.microsoft.com/azure/includes/media/cloud-shell-try-it/launchcloudshell.png" data-linktype="external">
+</a></br>
 You can use Azure CLI in order to deploy the template using the command:
 ```bash
 az group deployment create --resource-group <resource-group-name> --template-file template2.json
