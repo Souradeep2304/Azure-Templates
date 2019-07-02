@@ -33,4 +33,11 @@ Before using the powershell command do remember to upload the file using the upl
 
 ### 4. Terraform:
 
-Use the deploy.tf file inorder to do the deployment using terraform. Remember to upload the template1.json file to the directory before executing the commands for terraform.
+Use the deploy.tf file inorder to do the deployment using terraform. Remember to upload the template1.json file to the directory before executing the commands for terraform. After uploading the file and configuring Terraform, use the following sequence of commands:
+ - ``` bash 
+ terraform init
+ ``` 
+ -  ``` bash
+ terraform plan
+ ``` 
+
