@@ -10,7 +10,7 @@ resource "azurerm_template_deployment" "test" {
   name                = "Main-Deploy"
   resource_group_name = "${azurerm_resource_group.test.name}"
 
-  template_body = "${file("./template1.json")}"
+  template_body = "${file("./main.json")}"
 
   parameters={
 
