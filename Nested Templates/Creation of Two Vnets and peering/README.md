@@ -45,3 +45,10 @@ Before execuing the command you have to upload the main.json file through the up
 New-AzResourceGroupDeployment -ResourceGroupName <resource-group-name> -TemplateFile main.json
 ``` 
 Before using the powershell command do remember to upload the file using the upload option and then change to home directory. Also replace the resource-group-name with your resource group.
+
+### 4. Terraform:
+
+Use the TEMPLATE1.tf file inorder to do the deployment using terraform. Remember to upload the template1.json file to the directory before executing the commands for terraform. After uploading the file and [`configuring Terraform`](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-configure), use the following sequence of commands:
+ - ```terraform init ```
+ -  ```terraform plan ``` 
+ - ``` terraform apply```
