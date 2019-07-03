@@ -1,13 +1,13 @@
 
 resource "azurerm_resource_group" "test" {
-  name     = "MyAzureRsrcGrp"
+  name     = "TerraformRsrcGrp"
   location = "West Central US"
 
 
 }
 
 resource "azurerm_template_deployment" "test" {
-  name                = "Main-Deploy-1"
+  name                = "Main-Deploy-2"
   resource_group_name = "${azurerm_resource_group.test.name}"
 
   template_body = "${file("./main.json")}"
