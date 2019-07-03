@@ -19,7 +19,7 @@ Figure 1.2: Detailed Architecture in Azure
 </br>
 In case of disaster recovery the bash script may be executed on the database nsg to allow communication to the second Vnet's Database subnet.</br>
 
-## Three Modes of Execution:<br/>
+## Four Modes of Execution:<br/>
 ### 1. Using Deploy Button:
  <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSouradeep2304%2FAzure-Templates%2Fmaster%2FNested%20Templates%2FCreation%20of%20Two%20Vnets%20and%20peering%2Fmain.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
@@ -54,5 +54,5 @@ Before using the powershell command do remember to upload the file using the upl
 
 Use the TEMPLATE1.tf file inorder to do the deployment using terraform. Remember to upload the template1.json file to the directory before executing the commands for terraform. After uploading the file and [`configuring Terraform`](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-configure), use the following sequence of commands:
  - ```terraform init ```
- -  ```terraform plan ``` 
- - ``` terraform apply```
+ - ```terraform plan ``` 
+ - ```terraform apply```

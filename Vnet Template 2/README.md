@@ -25,6 +25,7 @@ You can use Azure CLI in order to deploy the template using the command:
 az group deployment create --resource-group <resource-group-name> --template-file template.json
 ```
 Before execuing the command you have to upload the template.json file through the upload option given in the Azure CLI portal. Also replace the resource-group-name with your resource group.<br/>
+
 ### 3. Azure PowerShell:
 <a href="https://shell.azure.com" target="_blank">
  <img name="launch-cloud-shell" src="https://docs.microsoft.com/azure/includes/media/cloud-shell-try-it/launchcloudshell.png" data-linktype="external">
