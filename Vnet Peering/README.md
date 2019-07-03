@@ -4,7 +4,7 @@ This template can be used inorder to deploy Vnet peering between two existing vn
 You can use [`Vnet Template 1`](https://github.com/Souradeep2304/Azure-Templates/tree/master/Vnet%20Template%201) repository in-order to create the Vnets.
 
 
-## Three Modes of Execution:<br/>
+## Four Modes of Execution:<br/>
 ### 1. Using Deploy Button:
  <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSouradeep2304%2FAzure-Templates%2Fmaster%2FVnet%20Peering%2Ftemplate3.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
