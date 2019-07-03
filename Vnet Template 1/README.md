@@ -3,7 +3,7 @@
 
 This template creates a Vnet with a default subnet named subnet1. You can use the parameter.json file in order to use the default values for the template deployment.
 
-## Three Modes of Execution:<br/>
+## Four Modes of Execution:<br/>
 ### 1. Using Deploy Button:
  <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSouradeep2304%2FAzure-Templates%2Fmaster%2FVnet%20Template%201%2Ftemplate2.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
@@ -34,3 +34,15 @@ Before execuing the command you have to upload the template2.json file through t
 New-AzResourceGroupDeployment -ResourceGroupName <resource-group-name> -TemplateFile template2.json
 ``` 
 Before using the powershell command do remember to upload the file using the upload option and then change to home directory. Also replace the resource-group-name with your resource group.
+
+### 4. Terraform:
+<a href="https://shell.azure.com" target="_blank">
+ <img name="launch-cloud-shell" src="https://docs.microsoft.com/azure/includes/media/cloud-shell-try-it/launchcloudshell.png" data-linktype="external">
+</a></br>
+
+Use the deploy.tf file inorder to do the deployment using terraform. Change the values of the parameters in the parameters section according to need. Remember to upload the template file to the directory before executing the commands for terraform. After uploading the file and [`configuring Terraform`](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-configure), use the following sequence of commands:
+ - ```terraform init ```
+ - ```terraform plan ``` 
+ - ```terraform apply```
+
+

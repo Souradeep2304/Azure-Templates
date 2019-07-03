@@ -20,7 +20,9 @@
 			"description":"Address range for the default subnet."
 		}
 	},
-	"enableDdosProtection":{"type":"bool"}
+	"enableDdosProtection":{"type":"bool",
+	"defaultValue": false
+}
 	},
 	"resources":
 	[
