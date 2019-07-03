@@ -14,21 +14,26 @@
             }
         },
         "virtualNetworkAccess":{"type":"bool",
+            "defaultValue": true,
+
             "metadata":{
                 "description":"Allow access to the virtual networks."
             }
         },
         "forwardedTraffic":{"type":"bool",
+            "defaultValue": false,
             "metadata":{
                 "description":"allow traffic forwarded by a network virtual appliance in a virtual network"
             }
         },
         "gatewayTransit":{"type":"bool",
+            "defaultValue": false,
             "metadata":{
                 "description":"If there is a virtual network gateway assosciated with the vnet."
             }
         },
         "remoteGateways":{"type":"bool",
+            "defaultValue": false,
             "metadata":{
                 "description":"To allow traffic from Vnet1 to Vnet2 through the gateway of Vnet2"
             }
