@@ -41,7 +41,7 @@ Before using the powershell command do remember to upload the file using the upl
  <img name="launch-cloud-shell" src="https://docs.microsoft.com/azure/includes/media/cloud-shell-try-it/launchcloudshell.png" data-linktype="external">
 </a></br>
 
-Use the TEMPLATE1.tf file inorder to do the deployment using terraform. Change the values of the parameters in the parameters section according to need. Remember to upload the main.json file to the directory before executing the commands for terraform. After uploading the file and [`configuring Terraform`](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-configure), use the following sequence of commands:
+Use the deploy.tf file inorder to do the deployment using terraform. Change the values of the parameters in the parameters section according to need. Remember to upload the template file to the directory before executing the commands for terraform. After uploading the file and [`configuring Terraform`](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-configure), use the following sequence of commands:
  - ```terraform init ```
  - ```terraform plan ``` 
  - ```terraform apply```
