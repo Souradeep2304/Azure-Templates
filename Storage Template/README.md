@@ -36,6 +36,9 @@ New-AzResourceGroupDeployment -ResourceGroupName <resource-group-name> -Template
 Before using the powershell command do remember to upload the file using the upload option and then change to home directory. Also replace the resource-group-name with your resource group.
 
 ### 4. Terraform:
+<a href="https://shell.azure.com" target="_blank">
+ <img name="launch-cloud-shell" src="https://docs.microsoft.com/azure/includes/media/cloud-shell-try-it/launchcloudshell.png" data-linktype="external">
+</a></br>
 
 Use the deploy.tf file inorder to do the deployment using terraform. Remember to upload the template1.json file to the directory before executing the commands for terraform. After uploading the file and [`configuring Terraform`](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-configure), use the following sequence of commands:
  - ```terraform init ```
