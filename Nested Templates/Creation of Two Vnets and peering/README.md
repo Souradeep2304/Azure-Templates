@@ -17,7 +17,7 @@ Figure 1.2: Detailed Architecture in Azure
 
 
 </br>
-In case of disaster recovery the bash script may be executed on the database nsg to allow communication to the second Vnet's Database subnet.</br>
+In case of disaster recovery the bash script may be executed on the database network security groups of both the locations to allow communication to the second Vnet's Database subnet from the first.</br>
 
 ## Four Modes of Execution:<br/>
 ### 1. Using Deploy Button:
