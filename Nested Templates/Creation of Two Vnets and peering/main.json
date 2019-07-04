@@ -188,7 +188,7 @@
      "properties": {
        "mode": "Incremental",
        "templateLink": {
-          "uri":"https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Nested%20Templates/Creation%20of%20Two%20Vnets%20and%20peering/NSGcreation.json",
+          "uri":"https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Nested%20Templates/Creation%20of%20Two%20Vnets%20and%20peering/Subtemplates/NSGcreation.json",
           "contentVersion":"1.0.0.0"
        },
        "parameters": {
@@ -215,7 +215,7 @@
     "properties": {
       "mode": "Incremental",
       "templateLink": {
-         "uri":"https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Nested%20Templates/Creation%20of%20Two%20Vnets%20and%20peering/NSGcreation.json",
+         "uri":"https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Nested%20Templates/Creation%20of%20Two%20Vnets%20and%20peering/Subtemplates/NSGcreation.json",
          "contentVersion":"1.0.0.0"
       },
       "parameters": {
@@ -244,7 +244,7 @@
         "properties": {
           "mode": "Incremental",
     "templateLink": {
-        "uri":"https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Nested%20Templates/Creation%20of%20Two%20Vnets%20and%20peering/Vnet.json",
+        "uri":"https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Nested%20Templates/Creation%20of%20Two%20Vnets%20and%20peering/Subtemplates/Vnet.json",
         "contentVersion":"1.0.0.0"
      },
      "parameters": {
@@ -277,7 +277,7 @@
         "properties": {
           "mode": "Incremental",
     "templateLink": {
-        "uri":"https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Nested%20Templates/Creation%20of%20Two%20Vnets%20and%20peering/Vnet.json",
+        "uri":"https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Nested%20Templates/Creation%20of%20Two%20Vnets%20and%20peering/Subtemplates/Vnet.json",
         "contentVersion":"1.0.0.0"
      },
      "parameters": {
