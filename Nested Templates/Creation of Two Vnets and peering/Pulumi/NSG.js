@@ -14,7 +14,7 @@ class NSG extends pulumi.ComponentResource{
         {
             parent: this
 });
-
+this.nsgid=nsg.id;
     }
 }
 

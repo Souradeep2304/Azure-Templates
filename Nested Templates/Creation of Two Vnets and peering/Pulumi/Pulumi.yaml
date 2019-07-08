@@ -1,0 +1,6 @@
+name: VnetProject1
+runtime: nodejs
+description: This is the project regarding the creation of two vnets with 3 subnets
+  each, the vnets residing in different location. We have 2 sets of 3 NSGS being created
+  for the 6 subnets of the 2 vnets respectively. We also enable peering between these
+  two Vnets.

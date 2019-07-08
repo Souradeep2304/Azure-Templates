@@ -4,9 +4,9 @@ const azure = require("@pulumi/azure");
 
 
 class VNET extends pulumi.ComponentResource{
-    constructor(vnetname,location,rg,nsg1,nsg2,nsg3,vspace,s1,s2,s3,k){
-        super(vnetname,location,rg,nsg1,nsg2,nsg3,vspace,s1,s2,s3,k); 
-        const vnet = new azure.network.VirtualNetwork("K"+k, {
+    constructor(vnetname,location,rg,vspace,nsg1,nsg2,nsg3,s1,s2,s3,i){
+        super(vnetname,location,rg,vspace,nsg1,nsg2,nsg3,s1,s2,s3,i); 
+        const vnet = new azure.network.VirtualNetwork("N"+i, {
             addressSpaces: [vspace],
             
         
@@ -22,7 +22,7 @@ class VNET extends pulumi.ComponentResource{
                 {
                     addressPrefix: s2,
                     name: "S2",
-                    securityGroup: nsg2,
+                  securityGroup: nsg2,
                 },
                 {
                     addressPrefix: s3,
@@ -37,6 +37,8 @@ class VNET extends pulumi.ComponentResource{
     {
         parent: this
 });
+this.vnetid=vnet.id;
+this.vname=vnet.name;
     }
 }
 

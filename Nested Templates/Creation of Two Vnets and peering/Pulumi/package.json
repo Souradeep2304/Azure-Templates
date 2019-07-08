@@ -1,0 +1,8 @@
+{
+    "name": "azure-javascript",
+    "main": "main.js",
+    "dependencies": {
+        "@pulumi/pulumi": "latest",
+        "@pulumi/azure": "latest"
+    }
+}
