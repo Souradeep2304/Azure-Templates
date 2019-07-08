@@ -62,5 +62,4 @@ Use the TEMPLATE1.tf file inorder to do the deployment using terraform. Change t
  - ```terraform apply```
 
 ### 5. Pulumi: 
-
-Pulumi is another tool for implementing Infrastructure as a Code. It is a multi-language and multi-cloud development platform. Using Pulumi the same scenario can be deployed. [`main.js`](https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Nested%20Templates/Creation%20of%20Two%20Vnets%20and%20peering/Pulumi/main.js) script is to be executed in pulumi.
+Pulumi is another tool for implementing Infrastructure as a Code. It is a multi-language and multi-cloud development platform. Using Pulumi the same scenario can be deployed. [`main.js`](https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Nested%20Templates/Creation%20of%20Two%20Vnets%20and%20peering/Pulumi/main.js) script is to be executed in pulumi. To read more about Pulumi, [`click here`](https://www.pulumi.com/)
