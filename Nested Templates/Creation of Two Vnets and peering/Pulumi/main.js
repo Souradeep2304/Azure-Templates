@@ -1,22 +1,23 @@
 const pulumi = require("@pulumi/pulumi");
-const azure = require("@pulumi/azure");
-const nsg = require("./NSG.js"); 
+const azure = require("@pulumi/azure"); 
 const vnet = require("./V-NET.js");
 const peer=require("./peering.js");
+const web=require("./webNSG.js");
+const api=require("./apiNSG.js");
+const db=require("./dbNSG.js");
 
 
 
 
-
-const nsg1=new nsg.NSG("East US","PulumiRG","K1",1);
-const nsg2=new nsg.NSG("East US","PulumiRG","K2",2);
-const nsg3=new nsg.NSG("East US","PulumiRG","K3",3);
-
+const nsg1=new web.NSG("East US","PulumiRG","K1",1,"10.0.0.0/24","10.0.1.0/24","10.0.2.0/24");
+const nsg2=new api.NSG("East US","PulumiRG","K2",2,"10.0.0.0/24","10.0.1.0/24","10.0.2.0/24");
+const nsg3=new db.NSG("East US","PulumiRG","K3",3,"10.0.0.0/24","10.0.1.0/24","10.0.2.0/24");
 
 
-const nsg4=new nsg.NSG("West US","PulumiRG","K4",4);
-const nsg5=new nsg.NSG("West US","PulumiRG","K5",5);
-const nsg6=new nsg.NSG("West US","PulumiRG","K6",6);
+
+const nsg4=new web.NSG("West US","PulumiRG","K4",4,"15.0.0.0/24","15.0.1.0/24","15.0.2.0/24");
+const nsg5=new api.NSG("West US","PulumiRG","K5",5,"15.0.0.0/24","15.0.1.0/24","15.0.2.0/24");
+const nsg6=new db.NSG("West US","PulumiRG","K6",6,"15.0.0.0/24","15.0.1.0/24","15.0.2.0/24");
 
 
 
