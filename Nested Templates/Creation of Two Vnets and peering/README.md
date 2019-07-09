@@ -19,7 +19,7 @@ Figure 1.2: Detailed Architecture in Azure
 </br>
 In case of disaster recovery the bash script may be executed on the database network security groups of both the locations to allow communication to the second Vnet's Database subnet from the first.</br>
 
-## Five Modes of Execution:<br/>
+## Four Modes of Execution:<br/>
 ### 1. Using Deploy Button:
  <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSouradeep2304%2FAzure-Templates%2Fmaster%2FNested%20Templates%2FCreation%20of%20Two%20Vnets%20and%20peering%2Fmain.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
@@ -60,6 +60,3 @@ Use the TEMPLATE1.tf file inorder to do the deployment using terraform. Change t
  - ```terraform init ```
  - ```terraform plan ``` 
  - ```terraform apply```
-
-### 5. Pulumi: 
-Pulumi is another tool for implementing Infrastructure as a Code. It is a multi-language and multi-cloud development platform. Using Pulumi the same scenario can be deployed. [`main.js`](https://raw.githubusercontent.com/Souradeep2304/Azure-Templates/master/Nested%20Templates/Creation%20of%20Two%20Vnets%20and%20peering/Pulumi/main.js) script is to be executed in pulumi. To read more about Pulumi, [`click here`](https://www.pulumi.com/)
