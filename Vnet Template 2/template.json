@@ -21,7 +21,11 @@
 			}
 		},
 		"subnetName1": {
-			"type": "string"
+			"type": "string",
+			"metadata": {
+				"description":"Name of the first Subnet"
+			},
+			"defaultValue": "S1"
 
 		},
 		"subnetAddressPrefix1": {
@@ -32,7 +36,11 @@
 			}
 		},
 		"subnetName2": {
-			"type": "string"
+			"type": "string",
+			"metadata": {
+				"description":"Name of the second Subnet"
+			},
+			"defaultValue": "S2"
 		},
 		"subnetAddressPrefix2": {
 			"type": "string",
@@ -42,7 +50,11 @@
 			}
 		},
 		"subnetName3": {
-			"type": "string"
+			"type": "string",
+			"metadata": {
+				"description":"Name of the third Subnet"
+			},
+			"defaultValue": "S3"
 		},
 		"subnetAddressPrefix3": {
 			"type": "string",
@@ -59,13 +71,26 @@
 			}
 		},
 		"networkSecurityGroup1": {
-			"type": "string"
+			
+			"type": "string",
+			"metadata":{
+				"description":"Name of the First Network Security Group"
+			},
+			"defaultValue": "NSG1"
 		},
 		"networkSecurityGroup2": {
-			"type": "string"
+			"type": "string",
+			"metadata":{
+				"description":"Name of the Second Network Security Group"
+			},
+			"defaultValue": "NSG2"
 		},
 		"networkSecurityGroup3": {
-			"type": "string"
+			"type": "string",
+			"metadata":{
+				"description":"Name of the Third Network Security Group"
+			},
+			"defaultValue": "NSG2"
 		},
 		
 		"enableDdosProtection": {
