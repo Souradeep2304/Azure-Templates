@@ -7,11 +7,16 @@
 			"metadata":{
 
 				"description":"This is the name of the master Vnet to be created."
-			}
+			},
+			"defaultValue": "V1"
 		},
 
 		"location": {
-			"type": "string"
+			"type": "string",
+			"metadata": {
+				"description":"Location of the resource"
+			},
+			"defaultValue": "[resourceGroup().location]"
 		},
 		"addressPrefix": {
 			"type": "string",
@@ -90,7 +95,7 @@
 			"metadata":{
 				"description":"Name of the Third Network Security Group"
 			},
-			"defaultValue": "NSG2"
+			"defaultValue": "NSG3"
 		},
 		
 		"enableDdosProtection": {
