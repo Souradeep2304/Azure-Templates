@@ -2,20 +2,29 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
 "contentVersion": "1.0.0.0",
 "parameters": {
-	"Vnet Name":{"type":"string"},
-	"Subnet Name":{"type":"string"},
-	"Subnet Prefix":{"type":"string"},
-	"location":{"type":"string",
-		"defaultValue":"[resourceGroup.location()]"
-
-	}
+	"Vnet Name":{
+		"type":"string",
+		"metadata":{
+			"description":"Name of the Virtual Network in which we need to create a subnet."
+		}
+	},
+	"Subnet Name":{"type":"string",
+	"defaultValue": "SUB1",
+"metadata": {
+	"description":"Name of the subnet to be created"
+}},
+	"Subnet Prefix":{"type":"string",
+	"metadata": {
+		"description":"Address prefix for the subnet"
+	}}
+	
 },
 	"resources": [
     {
       "apiVersion": "2018-04-01",
       "type": "Microsoft.Network/virtualNetworks/subnets",
 	"name": "[concat(parameters('Vnet Name'), '/', parameters('Subnet Name'))]",
-	"location": "[parameters('location')]",
+	
       "properties": {
         "addressPrefix": "[parameters('Subnet Prefix')]"
 }
