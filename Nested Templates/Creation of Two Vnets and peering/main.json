@@ -3,10 +3,15 @@
     "contentVersion": "1.0.0.0",
     "parameters":{
 		"location1": {
-			"type": "string"
+			"type": "string",
+            "defaultValue":"[resourceGroup().location]",
+            "metadata":{
+                "description":"Location of first Vnet"
+            }
 		},
         "vNet1": {
-			"type": "string",
+            "type": "string",
+            "defaultValue":"V1",
 			"metadata":{
 
 				"description":"This is the name of the first Vnet to be created."
@@ -22,7 +27,11 @@
 			}
 		},
         "subnetName1": {
-        "type": "string"
+        "type": "string",
+        "defaultValue": "S1",
+        "metadata":{
+        "description":"Name of the first subnet of first Vnet"    
+        }
 
     },
     "subnetAddressPrefix1": {
@@ -33,7 +42,12 @@
         }
     },
     "subnetName2": {
-        "type": "string"
+        "type": "string",
+        "defaultValue": "S2",
+        "metadata":{
+        "description":"Name of the second subnet of first Vnet"    
+        }
+
     },
     "subnetAddressPrefix2": {
         "type": "string",
@@ -43,7 +57,12 @@
         }
     },
     "subnetName3": {
-        "type": "string"
+        "type": "string",
+        "defaultValue": "S3",
+        "metadata":{
+        "description":"Name of the third subnet of first Vnet"    
+        }
+
     },
     "subnetAddressPrefix3": {
         "type": "string",
@@ -60,10 +79,15 @@
         }
     },
     "location2": {
-        "type": "string"
+        "type": "string",
+        "defaultValue": "[resourceGroup().location]",
+        "metadata": {
+            "description":"Location of the second Vnet"
+        }
     },
 	"vNet2": {
-		"type": "string",
+        "type": "string",
+        "defaultValue": "V2",
 		"metadata":{
 
 			"description":"This is the name of the second Vnet to be created."
@@ -79,7 +103,11 @@
 	},
 	 
 	"subnet1NameOfSecondVnet": {
-        "type": "string"
+        "type": "string",
+        "defaultValue": "S1",
+        "metadata": {
+            "description":"Name of the first subnet in second Vnet"
+        }
 
     },
     "subnet1AddressPrefixOfSecondVnet": {
@@ -90,7 +118,11 @@
         }
     },
     "subnet2NameOfSecondVnet": {
-        "type": "string"
+        "type": "string",
+        "defaultValue": "S2",
+        "metadata": {
+            "description":"Name of the second subnet in second Vnet"
+        }
     },
     "subnet2AddressPrefixOfSecondVnet": {
         "type": "string",
@@ -100,7 +132,11 @@
         }
     },
     "subnet3NameOfSecondVnet": {
-        "type": "string"
+        "type": "string",
+        "defaultValue": "S3",
+        "metadata": {
+            "description":"Name of the third subnet in second Vnet"
+        }
     },
     "subnet3AddressPrefixOfSecondVnet": {
         "type": "string",
@@ -117,61 +153,72 @@
         }
 	},
 	"firstNetworkSecurityGroupInFirstLocaion": {
-		"type": "string",
+        "type": "string",
+        "defaultValue": "W1",
 		"metadata":{
 			"description":"Name of first security group"
 		}
 	},
 	"secondNetworkSecurityGroupInFirstLocaion": {
-		"type": "string",
+        "type": "string",
+        "defaultValue": "A1",
 		"metadata":{
 			"description":"Name of second security group"
 		}
 	},
 	"thirdNetworkSecurityGroupInFirstLocaion": {
-		"type": "string",
+        "type": "string",
+        "defaultValue": "D1",
 		"metadata":{
 			"description":"Name of third security group"
 		}
     },
     "firstNetworkSecurityGroupInSecondLocaion": {
-		"type": "string",
+        "type": "string",
+        "defaultValue": "W2",
 		"metadata":{
 			"description":"Name of first security group in other location"
 		}
 	},
 	"secondNetworkSecurityGroupInSecondLocaion": {
-		"type": "string",
+        "type": "string",
+        "defaultValue": "A2",
 		"metadata":{
 			"description":"Name of second security group in other locationgroup"
 		}
 	},
 	"thirdNetworkSecurityGroupInSecondLocaion": {
-		"type": "string",
+        "type": "string",
+        "defaultValue": "D2",
 		"metadata":{
 			"description":"Name of third security group in other location"
 		}
 	},
 	"enableDdosProtection": {
-		"type": "bool"
+        "type": "bool",
+        "defaultValue": false
     },
  
     "virtualNetworkAccess":{"type":"bool",
+        "defaultValue": true,
         "metadata":{
             "description":"Allow access to the virtual networks."
         }
     },
     "forwardedTraffic":{"type":"bool",
+        "defaultValue": false,
         "metadata":{
             "description":"allow traffic forwarded by a network virtual appliance in a virtual network"
         }
     },
     "gatewayTransit":{"type":"bool",
+        "defaultValue": false,
         "metadata":{
             "description":"If there is a virtual network gateway assosciated with the vnet."
         }
     },
     "remoteGateways":{"type":"bool",
+        "defaultValue": "false",
         "metadata":{
             "description":"To allow traffic from Vnet1 to Vnet2 through the gateway of Vnet2"
         }
