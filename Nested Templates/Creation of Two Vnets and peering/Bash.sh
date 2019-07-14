@@ -1,19 +1,19 @@
 Connect-AzAccount
 
-$RG="MyAzureRsrcGrp"
+$RG="MyResourceGrp"
 $port1=3307
 
 $rulename1="DisasterRecovery1"
 $rulename2="DisasterRecovery2"
 
-$nsgname1="DATABASE1" #Change the Name according to need
-$nsgname1="DATABASE2" #Change the Name according to need
+$N1="D1" #Change the Name according to need
+$N2="D2" #Change the Name according to need
 
 
 
 $resource = Get-AzResource | Where {$_.ResourceGroupName –eq $RG -and $_.ResourceType -eq "Microsoft.Network/networkSecurityGroups"} 
-$nsg1 = Get-AzNetworkSecurityGroup -Name $nsgname1 -ResourceGroupName $RG
-$nsg2 = Get-AzNetworkSecurityGroup -Name $nsgname2 -ResourceGroupName $RG
+$nsg1 = Get-AzNetworkSecurityGroup -Name $N1 -ResourceGroupName $RG
+$nsg2 = Get-AzNetworkSecurityGroup -Name $N2 -ResourceGroupName $RG
 
 # Add the inbound security rule.
 $nsg2 | Add-AzNetworkSecurityRuleConfig -Name $rulename1 -Description "AllowCommFromD2toD1" -Access Allow `
@@ -27,4 +27,5 @@ $nsg1 | Add-AzNetworkSecurityRuleConfig -Name $rulename2 -Description "AllowComm
     -DestinationAddressPrefix "15.0.2.0/24" -DestinationPortRange $port1
 
 # Update the NSG.
-$nsg | Set-AzNetworkSecurityGroup
+$nsg1 | Set-AzNetworkSecurityGroup
+$nsg2 | Set-AzNetworkSecurityGroup
