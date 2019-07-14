@@ -11,7 +11,6 @@
         },
         "storageAccountName": {
             "type": "string",
-            "defaultValue": "ACC1",
             "metadata": {
                 "defaultValue":"Name of the Storage Account"
             }
