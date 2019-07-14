@@ -34,7 +34,7 @@
             "metadata":{
             "description":"Kind of access required: Hot or Cool"
         },
-        "defaultValue": "Hot"
+        "defaultValue": "cool"
         }
        
     },
