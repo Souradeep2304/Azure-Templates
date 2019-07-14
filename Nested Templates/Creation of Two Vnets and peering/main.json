@@ -218,7 +218,7 @@
         }
     },
     "remoteGateways":{"type":"bool",
-        "defaultValue": "false",
+        "defaultValue": false,
         "metadata":{
             "description":"To allow traffic from Vnet1 to Vnet2 through the gateway of Vnet2"
         }
