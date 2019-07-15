@@ -32,7 +32,7 @@ resource "azurerm_template_deployment" "test" {
       "subnet2NameOfSecondVnet"="S2",
       "subnet2AddressPrefixOfSecondVnet"="15.0.1.0/24",
       "subnet3NameOfSecondVnet"="S3",
-      "subnet2AddressPrefixOfSecondVnet"="15.0.2.0/24",
+      "subnet3AddressPrefixOfSecondVnet"="15.0.2.0/24",
       "firewallSubnetOfSecondVnet"="15.0.3.0/24",
       "firstNetworkSecurityGroupInFirstLocaion"="W1",
       "secondNetworkSecurityGroupInFirstLocaion"="A1",
