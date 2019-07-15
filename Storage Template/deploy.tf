@@ -1,7 +1,6 @@
 resource "azurerm_resource_group" "test" {
-  name     = "MyAzureRsrcGrp"
+  name     = "TerraformRsrcGrp"
   location = "West Central US"
-
 
 }
 
