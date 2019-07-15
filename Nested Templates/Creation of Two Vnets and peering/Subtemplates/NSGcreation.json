@@ -23,15 +23,6 @@
 		},
 		"subnetAddressPrefix3": {
 			"type": "string"
-		},
-		"subnet1AddressPrefixOfSecondVnet": {
-			"type": "string"
-		},
-		"subnet2AddressPrefixOfSecondVnet": {
-			"type": "string"
-		},
-		"subnet3AddressPrefixOfSecondVnet": {
-			"type": "string"
 		}
     },
     
