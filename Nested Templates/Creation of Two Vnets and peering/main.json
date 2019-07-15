@@ -245,11 +245,7 @@
         "networkSecurityGroup3":{"value":"[parameters('thirdNetworkSecurityGroupInFirstLocaion')]"},
 		"subnetAddressPrefix1":{"value":"[parameters('subnetAddressPrefix1')]"},
 		"subnetAddressPrefix2":{"value":"[parameters('subnetAddressPrefix2')]"},
-		"subnetAddressPrefix3":{"value":"[parameters('subnetAddressPrefix3')]"},
-		"subnet1AddressPrefixOfSecondVnet":{"value":"[parameters('subnet1AddressPrefixOfSecondVnet')]"},
-		"subnet2AddressPrefixOfSecondVnet":{"value":"[parameters('subnet2AddressPrefixOfSecondVnet')]"},
-		"subnet3AddressPrefixOfSecondVnet":{"value":"[parameters('subnet3AddressPrefixOfSecondVnet')]"}
-
+		"subnetAddressPrefix3":{"value":"[parameters('subnetAddressPrefix3')]"}
 
         
     }
@@ -270,12 +266,9 @@
        "networkSecurityGroup1":{"value":"[parameters('firstNetworkSecurityGroupInSecondLocaion')]"},
        "networkSecurityGroup2":{"value":"[parameters('secondNetworkSecurityGroupInSecondLocaion')]"},
        "networkSecurityGroup3":{"value":"[parameters('thirdNetworkSecurityGroupInSecondLocaion')]"},
-       "subnetAddressPrefix1":{"value":"[parameters('subnetAddressPrefix1')]"},
-       "subnetAddressPrefix2":{"value":"[parameters('subnetAddressPrefix2')]"},
-       "subnetAddressPrefix3":{"value":"[parameters('subnetAddressPrefix3')]"},
-       "subnet1AddressPrefixOfSecondVnet":{"value":"[parameters('subnet1AddressPrefixOfSecondVnet')]"},
-       "subnet2AddressPrefixOfSecondVnet":{"value":"[parameters('subnet2AddressPrefixOfSecondVnet')]"},
-       "subnet3AddressPrefixOfSecondVnet":{"value":"[parameters('subnet3AddressPrefixOfSecondVnet')]"}
+       "subnetAddressPrefix1":{"value":"[parameters('subnet1AddressPrefixOfSecondVnet')]"},
+       "subnetAddressPrefix2":{"value":"[parameters('subnet2AddressPrefixOfSecondVnet')]"},
+       "subnetAddressPrefix3":{"value":"[parameters('subnet3AddressPrefixOfSecondVnet')]"}
 
 
        
