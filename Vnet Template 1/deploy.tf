@@ -6,7 +6,7 @@ resource "azurerm_resource_group" "test" {
 }
 
 resource "azurerm_template_deployment" "test" {
-  name                = "Main-Deploy-2"
+  name                = "Vnet-Deploy"
   resource_group_name = "${azurerm_resource_group.test.name}"
 
   template_body = "${file("./template2.json")}"

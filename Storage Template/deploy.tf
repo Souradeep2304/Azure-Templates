@@ -5,7 +5,7 @@ resource "azurerm_resource_group" "test" {
 }
 
 resource "azurerm_template_deployment" "test" {
-  name                = "Main-Deploy"
+  name                = "Storage-Template-Deploy"
   resource_group_name = "${azurerm_resource_group.test.name}"
 
   template_body = "${file("./template1.json")}"
