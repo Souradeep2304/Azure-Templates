@@ -16,13 +16,13 @@ $nsg1 = Get-AzNetworkSecurityGroup -Name $N1 -ResourceGroupName $RG
 $nsg2 = Get-AzNetworkSecurityGroup -Name $N2 -ResourceGroupName $RG
 
 # Add the inbound security rule.
-$nsg2 | Add-AzNetworkSecurityRuleConfig -Name $rulename1 -Description "AllowCommFromD2toD1" -Access Allow `
+$nsg2 | Add-AzNetworkSecurityRuleConfig -Name $rulename1 -Description "AllowCommFromD1toD2" -Access Allow `
     -Protocol * -Direction Inbound -Priority 3891 -SourceAddressPrefix "10.0.2.0/24" -SourcePortRange $port1 `
     -DestinationAddressPrefix "15.0.2.0/24" -DestinationPortRange $port1
 
 
 # Add the outbound security rule.
-$nsg1 | Add-AzNetworkSecurityRuleConfig -Name $rulename2 -Description "AllowCommFromD2toD1" -Access Allow `
+$nsg1 | Add-AzNetworkSecurityRuleConfig -Name $rulename2 -Description "AllowCommFromD1toD2" -Access Allow `
     -Protocol * -Direction Outbound -Priority 3891 -SourceAddressPrefix "10.0.2.0/24" -SourcePortRange $port1 `
     -DestinationAddressPrefix "15.0.2.0/24" -DestinationPortRange $port1
 
