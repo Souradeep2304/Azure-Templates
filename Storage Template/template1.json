@@ -12,7 +12,7 @@
         "storageAccountName": {
             "type": "string",
             "metadata": {
-                "defaultValue":"Name of the Storage Account"
+                "description":"Name of the Storage Account"
             }
         },
         "accountType": {
