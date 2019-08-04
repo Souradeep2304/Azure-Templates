@@ -15,12 +15,14 @@
         },
         "sku": {
             "type": "string",
+            "defaultValue":"basic",
             "metadata":{
                 "description":"Type of Load Balancer needed"
             }
         },
         "publicIPAddressName": {
             "type": "string",
+            "defaultValue":"IP1",
             "metadata":{
                 "description":"Name of the public IP address"
             }
@@ -60,7 +62,6 @@
             "sku": {
                 "name": "[parameters('sku')]"
             },
-            "tags": {},
             "properties": {
                 "publicIPAllocationMethod": "Dynamic",
                 "publicIPAddressVersion": "IPv4"
