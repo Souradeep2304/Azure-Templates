@@ -1,0 +1,70 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "type": "string",
+            "defaultValue":"L1",
+            "metadata":{
+                "description":"Name of the load balancer"
+            }
+        },
+        "location": {
+            "type": "string",
+            "defaultValue": "[resourceGroup().location]"
+        },
+        "sku": {
+            "type": "string",
+            "metadata":{
+                "description":"Type of Load Balancer needed"
+            }
+        },
+        "publicIPAddressName": {
+            "type": "string",
+            "metadata":{
+                "description":"Name of the public IP address"
+            }
+        }
+    },
+    "resources": [
+        {
+            "apiVersion": "2019-02-01",
+            "name": "[parameters('name')]",
+            "type": "Microsoft.Network/loadBalancers",
+            "location": "[parameters('location')]",
+            "sku": {
+                "name": "[parameters('sku')]"
+            },
+            "dependsOn": [
+                "[concat('Microsoft.Network/publicIPAddresses/', parameters('publicIPAddressName'))]"
+            ],
+            "tags": {},
+            "properties": {
+                "frontendIPConfigurations": [
+                    {
+                        "name": "LoadBalancerFrontEnd",
+                        "properties": {
+                            "publicIPAddress": {
+                                "id": "[resourceId('MyResourceGrp', 'Microsoft.Network/publicIPAddresses', parameters('publicIPAddressName'))]"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "apiVersion": "2019-02-01",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "name": "[parameters('publicIPAddressName')]",
+            "location": "[parameters('location')]",
+            "sku": {
+                "name": "[parameters('sku')]"
+            },
+            "tags": {},
+            "properties": {
+                "publicIPAllocationMethod": "Dynamic",
+                "publicIPAddressVersion": "IPv4"
+            }
+        }
+    ]
+}
