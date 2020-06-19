@@ -60,8 +60,8 @@
       "databasesNames": {
         "type": "array",
         "defaultValue": [
-          "db1",
-          "db2"
+          "sales",
+          "purchase"
         ],
         "metadata": {
           "description": "The SQL Databases names."
