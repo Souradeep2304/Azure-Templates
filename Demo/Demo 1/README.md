@@ -21,7 +21,7 @@ Figure 1.1: Snippet of SQL Database Template parameter file
 ## Deployment
 We are goin to use the Azure Powershell inorder to perform the deployment of the Azure Template. Windows PowerShell is a cross-platform task automation and configuration management framework, consisting of a command-line shell and scripting language. Powershell i s built on top of the .NET Common Language Runtime (CLR) and accepts and returns .NET objects.
 <p align="center">
-<img src="./Figures/powershell.png"></br>
+<img src="./Figures/powershell.png" width="400"></br>
 Figure 1.1: Windows Powershell
 </p>
 At first we are going to test the template with the parameters file before actually deploying. For that we are going to use the command:
