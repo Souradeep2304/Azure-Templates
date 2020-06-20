@@ -21,7 +21,7 @@
       "value": 400
     },
     "databaseDtuMin": {
-      "value": null
+      "value": 0
     },
     "databaseDtuMax": {
       "value": 400
@@ -36,7 +36,7 @@
       "value": "SQL_Latin1_General_CP1_CI_AS"
     },
     "location": {
-      "value": "[resourceGroup().location]"
+      "value": "EASTUS"
     }
   }
 }

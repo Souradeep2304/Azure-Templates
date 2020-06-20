@@ -18,3 +18,14 @@ We are also going to use a parmeter file to provide values to this template whil
 Figure 1.1: Snippet of SQL Database Template parameter file 
 </p>
 
+## Deployment
+Atfirst we are going to test the template with the parameters file before actually deploying. For that we are going to use the command:
+```bash
+Test-AzResourceGroupDeployment -ResourceGroupName "rsg-SQL-demo" -TemplateFile azuredeploy.json -Mode incremental -TemplateParameterFile parameters.json
+```
+
+After the Validation is complete we are going to actually deploy the template in Azure using the following commmand:
+
+```bash
+New-AzResourceGroupDeployment -ResourceGroupName "rsg-SQL-demo" -TemplateFile azuredeploy.json -Mode incremental -TemplateParameterFile parameters.json
+```
