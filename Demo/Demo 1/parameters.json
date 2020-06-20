@@ -3,10 +3,10 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "administratorLogin": {
-      "value": ""
+      "value": "souradeepdb"
     },
     "administratorLoginPassword": {
-      "value": ""  
+      "value": "Souradeep123!@"  
     },
     "serverName": {
       "value": "souradeepdemo"
