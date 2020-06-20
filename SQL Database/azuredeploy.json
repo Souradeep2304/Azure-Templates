@@ -5,7 +5,7 @@
       "administratorLogin": {
         "type": "string",
         "metadata": {
-          "description": "The SQL Server administrator login"
+          "description": "The SQL Server administrator login."
         }
       },
       "administratorLoginPassword": {
@@ -48,13 +48,13 @@
         "type": "int",
         "defaultValue": 0,
         "metadata": {
-          "description": "The Elastic Pool database DTU min."
+          "description": "Minimum value of Elastic Pool database DTU."
         }
       },
       "databaseDtuMax": {
         "type": "int",
         "metadata": {
-          "description": "The Elastic Pool database DTU max."
+          "description": "Maximum Elastic Pool database DTU."
         }
       },
       "databasesNames": {
@@ -64,7 +64,7 @@
           "purchase"
         ],
         "metadata": {
-          "description": "The SQL Databases names."
+          "description": "Names of the SQL databases to be created."
         }
       },
       "databaseCollation": {
