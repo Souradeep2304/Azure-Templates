@@ -1,8 +1,42 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-     
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "administratorLogin": {
+      "value": ""
+    },
+    "administratorLoginPassword": {
+      "value": ""  
+    },
+    "serverName": {
+      "value": "souradeepdemo"
+    },
+    "elasticPoolName": {
+      "value": "sourapooldemo"
+    },
+    "edition": {
+      "value": "Standard"
+    },
+    "poolDtu": {
+      "value": 400
+    },
+    "databaseDtuMin": {
+      "value": null
+    },
+    "databaseDtuMax": {
+      "value": 400
+    },
+    "databasesNames": {
+      "value": [
+        "sales",
+        "purchase"
+      ]
+    },
+    "databaseCollation": {
+      "value": "SQL_Latin1_General_CP1_CI_AS"
+    },
+    "location": {
+      "value": "[resourceGroup().location]"
+    }
   }
-
 }
