@@ -17,3 +17,4 @@ We are also going to use a parmeter file to provide values to this template whil
 <img src="./Figures/paramsnippet.png"></br>
 Figure 1.1: Snippet of SQL Database Template parameter file 
 </p>
+

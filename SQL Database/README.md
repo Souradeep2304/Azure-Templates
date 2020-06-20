@@ -1,7 +1,7 @@
-# Deploy a SQL Database with SQL Server (Under Development)
+# Deploy a SQL Database with SQL Server
 
 
-This template creates a SQL database with SQL server.
+This template creates a SQL database with SQL server. The databases are put inside an Elastic Pool.
 
 
 ## Four Modes of Execution:<br/>
